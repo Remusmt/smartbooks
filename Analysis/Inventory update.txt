@@ -1,0 +1,8 @@
+Fields needed to update inventory
+1) Price
+2) Quantity
+3) UoM
+3) Inventory Item Id
+4) Bin Id
+5) Source Document Id
+6) Source Document Type

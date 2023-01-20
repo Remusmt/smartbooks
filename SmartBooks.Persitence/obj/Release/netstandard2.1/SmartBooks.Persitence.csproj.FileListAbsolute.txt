@@ -1,0 +1,14 @@
+E:\repos\Witsoft\SmartBooks\SmartBooks.Persitence\bin\Release\netstandard2.1\SmartBooks.Persitence.deps.json
+E:\repos\Witsoft\SmartBooks\SmartBooks.Persitence\bin\Release\netstandard2.1\SmartBooks.Persitence.dll
+E:\repos\Witsoft\SmartBooks\SmartBooks.Persitence\bin\Release\netstandard2.1\SmartBooks.Persitence.pdb
+E:\repos\Witsoft\SmartBooks\SmartBooks.Persitence\bin\Release\netstandard2.1\SmartBooks.ApplicationCore.dll
+E:\repos\Witsoft\SmartBooks\SmartBooks.Persitence\bin\Release\netstandard2.1\SmartBooks.Domains.dll
+E:\repos\Witsoft\SmartBooks\SmartBooks.Persitence\bin\Release\netstandard2.1\SmartBooks.ApplicationCore.pdb
+E:\repos\Witsoft\SmartBooks\SmartBooks.Persitence\bin\Release\netstandard2.1\SmartBooks.Domains.pdb
+E:\repos\Witsoft\SmartBooks\SmartBooks.Persitence\obj\Release\netstandard2.1\SmartBooks.Persitence.csprojAssemblyReference.cache
+E:\repos\Witsoft\SmartBooks\SmartBooks.Persitence\obj\Release\netstandard2.1\SmartBooks.Persitence.AssemblyInfoInputs.cache
+E:\repos\Witsoft\SmartBooks\SmartBooks.Persitence\obj\Release\netstandard2.1\SmartBooks.Persitence.AssemblyInfo.cs
+E:\repos\Witsoft\SmartBooks\SmartBooks.Persitence\obj\Release\netstandard2.1\SmartBooks.Persitence.csproj.CoreCompileInputs.cache
+E:\repos\Witsoft\SmartBooks\SmartBooks.Persitence\obj\Release\netstandard2.1\SmartBooks.Persitence.csproj.CopyComplete
+E:\repos\Witsoft\SmartBooks\SmartBooks.Persitence\obj\Release\netstandard2.1\SmartBooks.Persitence.dll
+E:\repos\Witsoft\SmartBooks\SmartBooks.Persitence\obj\Release\netstandard2.1\SmartBooks.Persitence.pdb

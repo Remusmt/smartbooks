@@ -1,0 +1,43 @@
+<section class="lists-container">
+  <div class="page-header page-header-action">
+    <a [routerLink]="'/'"
+        class="back-arrow">
+      <mat-icon>arrow_back</mat-icon>
+    </a>
+    <span class="current-page-title">Charts of Account</span>
+    <span class="header-spacer"></span>
+      <button mat-raised-button
+              (click) = "onCreate()"
+              color="primary"
+              title="Add Account">
+              Add <mat-icon>format_align_left</mat-icon>
+      </button>
+  </div>
+  <div class="mat-elevation-z8">
+    <app-spinner></app-spinner>
+    <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+      <!-- This is the tree node template for leaf nodes -->
+      <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+        <!-- use a disabled button to provide padding for tree leaf
+        <button mat-icon-button disabled></button>-->
+        <a class="report-link">
+          {{node.accountName}} Bal: {{node.totalBalance}} &nbsp;
+          <button mat-icon-button (click)="onEdit(node)"><mat-icon>launch</mat-icon></button>
+          <button mat-icon-button color="warn" (click)="onDelete(node.id)"><mat-icon>delete_outline</mat-icon></button>
+        </a>
+      </mat-tree-node>
+      <!-- This is the tree node template for expandable nodes -->
+      <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
+        <button mat-icon-button matTreeNodeToggle
+                [attr.aria-label]="'toggle ' + node.accountName">
+          <mat-icon class="mat-icon-rtl-mirror">
+            {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+          </mat-icon>
+          {{node.accountName}} Bal: {{node.totalBalance}} &nbsp;
+          <button mat-icon-button (click)="onEdit(node)"><mat-icon>launch</mat-icon></button>
+          <button mat-icon-button color="warn" (click)="onDelete(node.id)"><mat-icon>delete_outline</mat-icon></button>
+        </button>
+      </mat-tree-node>
+    </mat-tree>
+</div>
+</section>

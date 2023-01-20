@@ -1,0 +1,17 @@
+<div class="page-header">
+  <a [routerLink]="'/'"
+      class="back-arrow">
+    <mat-icon>arrow_back</mat-icon>
+  </a>
+  <span class="current-page-title">Users Management Page</span>
+</div>
+<mat-drawer-container class="main-page-container">
+  <mat-drawer mode="side"
+              [opened]="(isHandset | async) === false"
+              class="list-container">
+    <app-users-list></app-users-list>
+  </mat-drawer>
+  <mat-drawer-content class="details-content-page">
+    <app-users-details></app-users-details>
+  </mat-drawer-content>
+</mat-drawer-container>

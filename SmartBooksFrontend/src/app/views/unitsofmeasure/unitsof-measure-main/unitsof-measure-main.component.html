@@ -1,0 +1,18 @@
+<div class="page-header">
+  <a (click) = "goBack()"
+      class="back-arrow">
+    <mat-icon>arrow_back</mat-icon>
+  </a>
+  <span class="current-page-title">Units of Measure</span>
+</div>
+<mat-drawer-container class="main-page-container">
+  <mat-drawer mode="side"
+              [opened]="(isHandset | async) === false"
+              class="list-container">
+    <app-unitsof-measure-list></app-unitsof-measure-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-unitsof-measure-details></app-unitsof-measure-details>
+  </mat-drawer-content>
+</mat-drawer-container>
+

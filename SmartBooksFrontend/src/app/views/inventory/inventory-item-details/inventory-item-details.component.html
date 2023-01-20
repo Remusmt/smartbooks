@@ -1,0 +1,161 @@
+<div class="page-header" *ngIf="isMobile">
+  <a (click)="goBack()"
+      class="back-arrow">
+    <mat-icon>arrow_back</mat-icon>
+  </a>
+  <span class="current-page-title">Item Details</span>
+</div>
+<section class="details-container">
+  <mat-divider class="padding-bottom-10"></mat-divider>
+  <div class="container-header">
+    <span class="container-header-title" >
+      {{selectedItem.description}}
+    </span>
+    <span class="header-spacer"></span>
+    <button mat-raised-button
+            color="primary"
+            title="Add payment"
+            [matMenuTriggerFor]="paymentMenu">
+            Menu <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #paymentMenu="matMenu">
+      <button mat-menu-item (click)="onCreate()" *ngIf="!isMobile">
+        <mat-icon class="mat-icon-color">add_circle</mat-icon>
+        Add Item
+      </button>
+      <button mat-menu-item (click)="onEdit()" *ngIf="isMobile">
+        <mat-icon class="mat-icon-color">launch</mat-icon>
+        Edit
+      </button>
+      <button mat-menu-item [matMenuTriggerFor]="inventoryMenu">
+        <img src="/assets/icons/warehouse-icon.png" class="mat-icon notranslate material-icons">
+        Inventory
+      </button>
+      <button mat-menu-item [matMenuTriggerFor]="print">
+        <mat-icon class="mat-icon-color">print</mat-icon>
+        Print
+      </button>
+      <button mat-menu-item [matMenuTriggerFor]="excelMenu">
+        <img src="/assets/icons/excel-icon.png" class="mat-icon notranslate material-icons">
+        Excel
+      </button>
+    </mat-menu>
+
+    <mat-menu #inventoryMenu="matMenu">
+      <button mat-menu-item>Quick Add</button>
+      <button mat-menu-item>Quick Count</button>
+      <button mat-menu-item>Transfer Order</button>
+      <button mat-menu-item>Stock Take</button>
+    </mat-menu>
+
+    <mat-menu #print="matMenu">
+      <button mat-menu-item>List</button>
+      <button mat-menu-item>Inventory Movement</button>
+    </mat-menu>
+
+    <mat-menu #excelMenu="matMenu">
+      <button mat-menu-item>Import Items</button>
+      <button mat-menu-item>Export List</button>
+    </mat-menu>
+  </div>
+  <mat-divider class="padding-top-10"></mat-divider>
+
+  <mat-card class="rep-details">
+    <mat-card-content>
+      <mat-list role="list">
+        <mat-grid-list cols="2" rowHeight="60px">
+          <mat-grid-tile [colspan] = "2">
+            <mat-list-item role="listitem"
+                         class="record-field-Item">
+            <span class="item-detail detail-caption">
+              Code
+            </span>
+            <span class="item-detail">
+              {{selectedItem.code}}
+            </span>
+          </mat-list-item>
+          </mat-grid-tile>
+          <mat-grid-tile [colspan] = "2">
+            <mat-list-item role="listitem"
+                         class="record-field-Item">
+            <span class="item-detail detail-caption">
+              Description
+            </span>
+            <span class="item-detail">
+              {{selectedItem.description}}
+            </span>
+          </mat-list-item>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-list-item role="listitem"
+                         class="record-field-Item">
+            <span class="item-detail detail-caption">
+              Cost
+            </span>
+            <span class="item-detail">
+              {{selectedItem.standardCost| number:'0.2-2'}}
+            </span>
+            </mat-list-item>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-list-item role="listitem"
+                         class="record-field-Item">
+            <span class="item-detail detail-caption">
+              Price
+            </span>
+            <span class="item-detail">
+              {{selectedItem.standardPrice| number:'0.2-2'}}
+            </span>
+            </mat-list-item>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-list-item role="listitem"
+                         class="record-field-Item">
+            <span class="item-detail detail-caption">
+              Type
+            </span>
+            <span class="item-detail">
+              {{getTypeDescription(selectedItem.type)}}
+            </span>
+            </mat-list-item>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-list-item role="listitem"
+                         class="record-field-Item">
+            <span class="item-detail detail-caption">
+              UoM
+            </span>
+            <span class="item-detail">
+              {{selectedItem.unitofMeasure?.abbreviation}}
+            </span>
+            </mat-list-item>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-list-item role="listitem"
+                         class="record-field-Item">
+            <span class="item-detail detail-caption">
+              In stock
+            </span>
+            <span class="item-detail">
+              {{selectedItem.onHand| number:'0.2-2'}}
+            </span>
+            </mat-list-item>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-list-item role="listitem"
+                         class="record-field-Item">
+            <span class="item-detail detail-caption">
+              Total Cost
+            </span>
+            <span class="item-detail">
+              {{selectedItem.totalAverageCost| number:'0.2-2'}}
+            </span>
+            </mat-list-item>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-list>
+
+    </mat-card-content>
+  </mat-card>
+
+</section>

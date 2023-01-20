@@ -1,0 +1,109 @@
+
+<mat-toolbar class="display-flex">
+  <span>{{service.addressForm.controls['id'].value?"Edit Address":"New Address"}}</span>
+  <span class="fill-remaining-space"></span>
+  <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabIndex="-1"><mat-icon>clear</mat-icon></button>
+</mat-toolbar>
+<mat-divider class="padding-top-10"></mat-divider>
+<mat-toolbar class="display-flex">
+  <span>Customer: {{selectedCustomer.name}}</span>
+  <span class="fill-remaining-space"></span>
+</mat-toolbar>
+
+
+<mat-divider class="padding-top-10"></mat-divider>
+
+<form [formGroup] = 'service.addressForm'
+(ngSubmit) = 'onSubmit()'>
+<mat-card class="register-card">
+  <mat-dialog-content>
+  <mat-card-content>
+    <mat-grid-list cols="2" rowHeight="60px">
+
+      <div *ngIf="saving">
+        <app-spinner></app-spinner>
+      </div>
+      <mat-grid-tile [colspan]= "2">
+        <mat-form-field class="full-width-field">
+          <mat-label class="mat-label">Location</mat-label>
+          <input matInput
+                type="text"
+                name="location"
+                formControlName="location"/>
+            <mat-error *ngIf="service.addressForm.controls.location.errors?.required">
+              Location is required
+            </mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field class="full-width-field">
+          <mat-label class="mat-label">Po Box</mat-label>
+          <input matInput
+                type="text"
+                name="poBox"
+                formControlName="poBox"/>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field class="full-width-field">
+          <mat-label class="mat-label">Postal Code</mat-label>
+          <input matInput
+                type="text"
+                name="postalCode"
+                formControlName="postalCode"/>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field class="full-width-field">
+          <mat-label class="mat-label">City</mat-label>
+          <input matInput
+                type="text"
+                name="city"
+                formControlName="city"/>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field class="full-width-field"
+          role="group">
+          <mat-label class="mat-label">
+            Country
+          </mat-label>
+          <mat-select
+            [formControl]="service.addressForm.controls.countryId">
+            <mat-option
+              *ngFor="let country of companyService.countryDataSource |async"
+              [value]="country.id">
+              {{country.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
+
+
+  </mat-grid-list>
+  </mat-card-content>
+</mat-dialog-content>
+  <mat-card-actions class="form-actions">
+    <button mat-raised-button
+            type="button"
+            (click)="onClose()"
+            class="btn-form-actions btn-form-actions-cancel">
+            Cancel
+    </button>
+
+    <button mat-raised-button
+            type="submit"
+            class="btn-form-actions"
+            color = 'primary'>
+            Save
+    </button>
+  </mat-card-actions>
+</mat-card>
+</form>
+
+
+

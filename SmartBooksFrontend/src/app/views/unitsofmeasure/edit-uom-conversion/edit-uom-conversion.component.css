@@ -1,0 +1,26 @@
+
+.step-form-container {
+  padding: 5px;
+  padding-top: 10px;
+}
+
+.factor-field {
+  max-width: 150px;
+  text-align: right;
+}
+
+.conversion-summary {
+  margin: 5px;
+  padding: 5px;
+}
+
+.summary-title {
+  font-weight: bold;
+  text-decoration: underline;
+  padding-bottom: 5px;
+}
+
+.conversion-description {
+  font-weight: bold;
+  text-decoration: underline;
+}

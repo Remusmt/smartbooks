@@ -1,0 +1,150 @@
+
+<mat-toolbar class="display-flex">
+  <span>{{service.form.controls['id'].value?"Edit Tax":"New Tax"}}</span>
+  <span class="fill-remaining-space"></span>
+  <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabIndex="-1"><mat-icon>clear</mat-icon></button>
+</mat-toolbar>
+<mat-divider class="padding-top-10"></mat-divider>
+
+<form [formGroup] = 'service.form'
+(ngSubmit) = 'onSubmit()'>
+<mat-card class="register-card">
+  <mat-dialog-content>
+  <mat-card-content>
+    <mat-grid-list cols="2" rowHeight="60px">
+      <mat-grid-tile>
+        <mat-form-field class="full-width-field">
+          <mat-label class="mat-label">Code</mat-label>
+          <input matInput
+                type="text"
+                name="code"
+                formControlName="code"
+                required/>
+          <mat-error *ngIf="service.form.controls.code.errors?.required">
+            Code is required
+          </mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <div *ngIf="saving">
+        <app-spinner></app-spinner>
+      </div>
+      <mat-grid-tile>
+        <mat-form-field class="full-width-field">
+          <mat-label class="mat-label">Description</mat-label>
+          <input matInput
+                type="text"
+                name="description"
+                formControlName="description"
+                required/>
+            <mat-error *ngIf="service.form.controls.description.errors?.required">
+              Description is required
+            </mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile [colspan]= "2">
+        <mat-form-field class="full-width-field"
+        role="group">
+        <mat-label class="mat-label">
+          Tax Agency
+        </mat-label>
+        <mat-select
+          [formControl]="service.form.controls.taxAgencyId">
+          <mat-option
+            *ngFor="let supplier of suppliersService.taxAgencyDataSource |async"
+            [value]="supplier.id">
+            {{supplier.name}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="service.form.controls.taxAgencyId.errors?.required">
+          Tax Agency is required
+        </mat-error>
+      </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field class="full-width-field"
+          role="group">
+          <mat-label class="mat-label">
+            Purchases Account
+          </mat-label>
+          <mat-select
+            [formControl]="service.form.controls.purchasesAccountId">
+            <mat-option
+              *ngFor="let account of chartofaccountService.postingDataSource |async"
+              [value]="account.id">
+              {{account.accountName}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field class="full-width-field"
+          role="group">
+          <mat-label class="mat-label">
+            Sales Account
+          </mat-label>
+          <mat-select
+            [formControl]="service.form.controls.salesAccountId">
+            <mat-option
+              *ngFor="let account of chartofaccountService.postingDataSource |async"
+              [value]="account.id">
+              {{account.accountName}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field class="full-width-field"
+          role="group">
+          <mat-label class="mat-label">
+            Reporting Method
+          </mat-label>
+          <mat-select
+            [formControl]="service.form.controls.reportingMethod"
+            required>
+            <mat-option
+              *ngFor="let reportMethod of reportingMethods"
+              [value]="reportMethod.id">
+              {{reportMethod.description}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="service.form.controls.reportingMethod.errors?.required">
+            Reporting Method is required
+          </mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field class="full-width-field">
+          <mat-label class="mat-label">Registration Number</mat-label>
+          <input matInput
+                type="text"
+                name="taxRegistrationNumber"
+                formControlName="taxRegistrationNumber"/>
+        </mat-form-field>
+      </mat-grid-tile>
+
+  </mat-grid-list>
+  </mat-card-content>
+</mat-dialog-content>
+  <mat-card-actions class="form-actions">
+    <button mat-raised-button
+            type="button"
+            (click)="onClose()"
+            class="btn-form-actions btn-form-actions-cancel">
+            Cancel
+    </button>
+
+    <button mat-raised-button
+            type="submit"
+            class="btn-form-actions"
+            color = 'primary'>
+            Save
+    </button>
+  </mat-card-actions>
+</mat-card>
+</form>
+

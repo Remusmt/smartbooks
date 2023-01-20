@@ -1,0 +1,12 @@
+E:\repos\Witsoft\SmartBooks\SmartBooks.Reports\bin\Debug\netstandard2.1\SmartBooks.Reports.deps.json
+E:\repos\Witsoft\SmartBooks\SmartBooks.Reports\bin\Debug\netstandard2.1\SmartBooks.Reports.dll
+E:\repos\Witsoft\SmartBooks\SmartBooks.Reports\bin\Debug\netstandard2.1\SmartBooks.Reports.pdb
+E:\repos\Witsoft\SmartBooks\SmartBooks.Reports\bin\Debug\netstandard2.1\SmartBooks.Domains.dll
+E:\repos\Witsoft\SmartBooks\SmartBooks.Reports\bin\Debug\netstandard2.1\SmartBooks.Domains.pdb
+E:\repos\Witsoft\SmartBooks\SmartBooks.Reports\obj\Debug\netstandard2.1\SmartBooks.Reports.csprojAssemblyReference.cache
+E:\repos\Witsoft\SmartBooks\SmartBooks.Reports\obj\Debug\netstandard2.1\SmartBooks.Reports.AssemblyInfoInputs.cache
+E:\repos\Witsoft\SmartBooks\SmartBooks.Reports\obj\Debug\netstandard2.1\SmartBooks.Reports.AssemblyInfo.cs
+E:\repos\Witsoft\SmartBooks\SmartBooks.Reports\obj\Debug\netstandard2.1\SmartBooks.Reports.csproj.CoreCompileInputs.cache
+E:\repos\Witsoft\SmartBooks\SmartBooks.Reports\obj\Debug\netstandard2.1\SmartBooks.Reports.csproj.CopyComplete
+E:\repos\Witsoft\SmartBooks\SmartBooks.Reports\obj\Debug\netstandard2.1\SmartBooks.Reports.dll
+E:\repos\Witsoft\SmartBooks\SmartBooks.Reports\obj\Debug\netstandard2.1\SmartBooks.Reports.pdb

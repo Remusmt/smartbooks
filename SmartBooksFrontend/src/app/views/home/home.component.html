@@ -1,0 +1,97 @@
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav noprint" fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false"
+    (click)="toggleSideNav(drawer)">
+    <mat-toolbar class="side-nav-header">
+      <a [routerLink]="'/'">
+        <div class="witsoft-logo">
+          <img src="/assets/icons/icon-96x96.png"
+          alt="Logo image"
+          class="logo">
+          <span class="logo-text">SmartBooks ERP</span>
+        </div>
+      </a>
+    </mat-toolbar>
+
+      <mat-tree [dataSource]="dataSource"
+                [treeControl]="treeControl"
+                class="menu-list-container">
+        <!-- This is the tree node template for leaf nodes -->
+        <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+          <!-- use a disabled button to provide padding for tree leaf
+          <button mat-icon-button disabled></button>-->
+          <button mat-icon-button (click)="reportLinkClicked(node.linkUrl)"
+            class="menu-link"
+            [ngClass]="{'highlightSelected':isCurrentLink(2)}">
+            <img src="/assets/icons/{{node.icon}}"
+                  class="mat-icon notranslate material-icons mat-icon-no-color ng-star-inserted"
+                  *ngIf="node.imageIcon">
+            <mat-icon *ngIf="!node.imageIcon">{{node.icon}}</mat-icon> &nbsp;
+            {{node.description}}
+          </button>
+        </mat-tree-node>
+        <!-- This is the tree node template for expandable nodes -->
+        <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
+          <button mat-icon-button matTreeNodeToggle
+                  [attr.aria-label]="'toggle ' + node.description">
+            <mat-icon class="mat-icon-rtl-mirror">
+              {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+            </mat-icon>
+            <img src="/assets/icons/{{node.icon}}"
+                class="mat-icon notranslate material-icons mat-icon-no-color ng-star-inserted"
+                *ngIf="node.imageIcon">
+            <mat-icon *ngIf="!node.imageIcon">{{node.icon}}</mat-icon> &nbsp;
+            {{node.description}}
+          </button>
+        </mat-tree-node>
+      </mat-tree>
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary"
+                  class="noprint toolbar-z-index">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="(isHandset$ | async) || !drawer.opened">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>{{currentUserValue.companyName}}</span>
+
+      <span class="menu-spacer"></span>
+
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item
+                (click) = changePassword()>
+          <mat-icon>settings_backup_restore</mat-icon>
+          <span>Change Password</span>
+        </button>
+        <button mat-menu-item
+                [routerLink]="'/app/users'"
+                *ngIf="currentUserValue.canManageUsers">
+          <mat-icon>account_box</mat-icon>
+          <span>Manage Users</span>
+        </button>
+        <mat-divider></mat-divider>
+        <button mat-menu-item
+                (click) = logout()>
+          <mat-icon>power_settings_new</mat-icon>
+          <span>Logout</span>
+        </button>
+      </mat-menu>
+    </mat-toolbar>
+
+    <div class="page-container">
+      <router-outlet></router-outlet>
+    </div>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,54 @@
+.details-container {
+  padding: 5px;
+}
+
+.container-header {
+  display: flex;
+  height: 40px;
+  box-sizing: border-box;
+  padding: 0 16px;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.container-header-title {
+  font: 500 20px/32px Roboto, "Helvetica Neue", sans-serif;
+  letter-spacing: normal;
+}
+
+.mobile-list-container {
+  max-width: 150px;
+}
+
+.header-spacer {
+  flex: 1 1 auto;
+}
+
+.record-field-Item {
+  width: 100;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: rgba(0,0,0,.12);
+  display: table;
+  height: 35px;
+}
+
+.item-detail {
+  display: table-cell;
+}
+
+.detail-caption {
+  width: 50%;
+  max-width: 200px;
+}
+
+.list-subheader {
+  font-size: 18px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: rgba(0,0,0,.12);
+}
+
+

@@ -1,0 +1,59 @@
+<mat-toolbar class="display-flex">
+  <span>Edit Unit Conversion</span>
+  <span class="fill-remaining-space"></span>
+  <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabIndex="-1"><mat-icon>clear</mat-icon></button>
+</mat-toolbar>
+
+<form [formGroup]="service.uomConversionForm" (ngSubmit) = 'onSubmit()'>
+  <mat-card class="register-card">
+    <mat-dialog-content>
+      <mat-card-content>
+        <app-spinner *ngIf="saving"></app-spinner>
+        <div class="step-form-container">
+          <mat-form-field class="factor-field">
+            <mat-label class="mat-label">Factor</mat-label>
+            <input matInput
+                  type="number"
+                  name="factor"
+                  formControlName="factor"
+                  (change)="onFactorChange()"
+                  required/>
+            <span matPrefix> 1 {{unitofMeasure.abbreviation}} = &nbsp;</span>
+            <span matSuffix>&nbsp; {{unitTo.abbreviation}}</span>
+            <mat-error *ngIf="service.uomConversionForm.controls.factor.errors">
+              Factor must be greater than zero
+            </mat-error>
+          </mat-form-field>
+          <div class="conversion-summary">
+            <span class="summary-title">
+              Conversion Summary
+            </span>
+            <p>
+              Verify that the conversion is correct.
+            </p>
+            <span class="conversion-description">
+              {{description}}
+            </span>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-dialog-content>
+    <mat-card-actions class="form-actions">
+      <button mat-raised-button
+              type="button"
+              (click)="onClose()"
+              class="btn-form-actions btn-form-actions-cancel">
+              Cancel
+      </button>
+
+      <button mat-raised-button
+              type="submit"
+              class="btn-form-actions"
+              color = 'primary'>
+              Save
+      </button>
+    </mat-card-actions>
+  </mat-card>
+
+
+</form>

@@ -1,0 +1,50 @@
+<section class="lists-container">
+  <div class="page-header page-header-action">
+    <a [routerLink]="'/'"
+        class="back-arrow">
+      <mat-icon>arrow_back</mat-icon>
+    </a>
+    <span class="current-page-title">Payment Terms</span>
+    <span class="header-spacer"></span>
+      <button mat-raised-button
+              (click) = "onCreate()"
+              color="primary"
+              title="Add Payment Terms">
+              Add <mat-icon>redeem</mat-icon>
+      </button>
+  </div>
+  <div class="mat-elevation-z8">
+    <app-spinner *ngIf="!service.wasFetched"></app-spinner>
+  <mat-table [dataSource]="listData"  matSort>
+    <ng-container matColumnDef="description">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Description</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.description}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef class="th-right w-75"></mat-header-cell>
+      <mat-cell *matCellDef="let row" class="th-right w-75">
+        <button mat-icon-button
+                (click)="onEdit(row)"
+                title="Edit">
+                <mat-icon>launch</mat-icon>
+        </button>
+        <button mat-icon-button color="warn"
+                (click)="onDelete(row.id)"
+                title="Delete">
+          <mat-icon>delete_outline</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="noData">
+      <mat-footer-cell *matFooterCellDef colspan="3">
+        No data.
+      </mat-footer-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(listData!=null && listData.data.length==0)}"></mat-footer-row>
+  </mat-table>
+  <mat-paginator [length]=listData.data.length [pageSizeOptions]="[10, 15, 20, 50, 100]" [pageSize]="10" showFirstLastButtons></mat-paginator>
+</div>
+</section>

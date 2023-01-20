@@ -1,0 +1,79 @@
+ALTER TABLE  `SubLedgerBases` ADD COLUMN `ApplicationUserId` INT NULL;
+ALTER TABLE  `SubLedgerBases` ADD COLUMN `DateJoined` datetime(6) NULL;
+ALTER TABLE  `SubLedgerBases` ADD COLUMN `DateOfBirth` datetime(6) NULL;
+ALTER TABLE  `SubLedgerBases` ADD COLUMN `HomeAddressId` INT NULL;
+ALTER TABLE  `SubLedgerBases` ADD COLUMN `IdBackAttachmentId` INT NULL;
+ALTER TABLE  `SubLedgerBases` ADD COLUMN `IdFrontAttachmentId` INT NULL;
+ALTER TABLE  `SubLedgerBases` ADD COLUMN `IndentificationNo` varchar(50) NULL;
+ALTER TABLE  `SubLedgerBases` ADD COLUMN `LearntAboutUs` INT NULL;
+ALTER TABLE  `SubLedgerBases` ADD COLUMN `MaritalStatus` INT NULL;
+ALTER TABLE  `SubLedgerBases` ADD COLUMN `MemberNumber` varchar(50) NULL;
+ALTER TABLE  `SubLedgerBases` ADD COLUMN `MemberStatus` INT NULL;
+ALTER TABLE  `SubLedgerBases` ADD COLUMN `Member_Gender` INT NULL;
+ALTER TABLE  `SubLedgerBases` ADD COLUMN `NearestTown` varchar(150) NULL;
+ALTER TABLE  `SubLedgerBases` ADD COLUMN `Occupation` varchar(150) NULL;
+ALTER TABLE  `SubLedgerBases` ADD COLUMN `OccupationType` INT NULL;
+ALTER TABLE  `SubLedgerBases` ADD COLUMN `OtherNames` varchar(150) NULL;
+ALTER TABLE  `SubLedgerBases` ADD COLUMN `PassportCopyId` INT NULL;
+ALTER TABLE  `SubLedgerBases` ADD COLUMN `PassportPhotoId` INT NULL;
+ALTER TABLE  `SubLedgerBases` ADD COLUMN `PermanentAddressId` INT NULL;
+ALTER TABLE  `SubLedgerBases` ADD COLUMN `Shared` decimal(18,6) NULL;
+ALTER TABLE  `SubLedgerBases` ADD COLUMN `SignatureId` INT NULL;
+ALTER TABLE  `SubLedgerBases` ADD COLUMN `Surname` varchar(150) NULL;
+ALTER TABLE  `SubLedgerBases` ADD COLUMN `Title` varchar(50) NULL;
+
+CREATE TABLE `MemberApprovals` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `ApplicationUserId` int NOT NULL,
+  `MemberId` int NOT NULL,
+  `ApprovalAction` int NOT NULL,
+  `MessageToMember` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+  `Comments` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+  `IsDeleted` tinyint(1) NOT NULL,
+  `UpdateCode` int NOT NULL,
+  `CompanyId` int NOT NULL,
+  `CreatedOn` datetime(6) NOT NULL,
+  `CreatedBy` int NOT NULL,
+  `CreatedByName` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  KEY `IX_MemberApprovals_MemberId` (`MemberId`),
+  CONSTRAINT `FK_MemberApprovals_SubLedgerBases_MemberId` FOREIGN KEY (`MemberId`) REFERENCES `SubLedgerBases` (`Id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `MemberAttachments` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `MemberId` int NOT NULL,
+  `AttachmentId` int NOT NULL,
+  `IsDeleted` tinyint(1) NOT NULL,
+  `UpdateCode` int NOT NULL,
+  `CompanyId` int NOT NULL,
+  `CreatedOn` datetime(6) NOT NULL,
+  `CreatedBy` int NOT NULL,
+  `CreatedByName` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  KEY `IX_MemberAttachments_AttachmentId` (`AttachmentId`),
+  KEY `IX_MemberAttachments_MemberId` (`MemberId`),
+  CONSTRAINT `FK_MemberAttachments_Attachments_AttachmentId` FOREIGN KEY (`AttachmentId`) REFERENCES `Attachments` (`Id`) ON DELETE RESTRICT,
+  CONSTRAINT `FK_MemberAttachments_SubLedgerBases_MemberId` FOREIGN KEY (`MemberId`) REFERENCES `SubLedgerBases` (`Id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+CREATE TABLE `NextOfKins` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `MemberId` int NOT NULL,
+  `Name` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+  `Relation` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+  `Contacts` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+  `IsMinor` tinyint(1) NOT NULL,
+  `CareOf` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+  `Percentage` decimal(18,6) NOT NULL,
+  `IsDeleted` tinyint(1) NOT NULL,
+  `UpdateCode` int NOT NULL,
+  `CompanyId` int NOT NULL,
+  `CreatedOn` datetime(6) NOT NULL,
+  `CreatedBy` int NOT NULL,
+  `CreatedByName` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  KEY `IX_NextOfKins_MemberId` (`MemberId`),
+  CONSTRAINT `FK_NextOfKins_SubLedgerBases_MemberId` FOREIGN KEY (`MemberId`) REFERENCES `SubLedgerBases` (`Id`) ON DELETE RESTRICT
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

@@ -1,0 +1,540 @@
+[
+  // Claim type field shouldn't be edited
+  {
+    "Description": "Global",
+    "Rights": [
+      {
+        "ClaimType": "View Settings",
+        "Description": "View"
+      }
+    ]
+  },
+  {
+    "Description": "Users",
+    "Rights": [
+      {
+        "ClaimType": "View Users",
+        "Description": "View"
+      },
+      {
+        "ClaimType": "Create Users",
+        "Description": "Create"
+      },
+      {
+        "ClaimType": "Edit Users",
+        "Description": "Edit"
+      },
+      {
+        "ClaimType": "Delete Users",
+        "Description": "Delete"
+      },
+      {
+        "ClaimType": "Manage Claims",
+        "Description": "Manage Rights"
+      }
+    ]
+  },
+  {
+    "Description": "Warehouses",
+    "Rights": [
+      {
+        "ClaimType": "View Warehouses",
+        "Description": "View"
+      },
+      {
+        "ClaimType": "Create Warehouses",
+        "Description": "Create"
+      },
+      {
+        "ClaimType": "Edit Warehouses",
+        "Description": "Edit"
+      },
+      {
+        "ClaimType": "Delete Warehouses",
+        "Description": "Delete"
+      },
+      {
+        "ClaimType": "Manage Bins",
+        "Description": "Manage Bins"
+      }
+    ]
+  },
+  {
+    "Description": "Inventory Items",
+    "Rights": [
+      {
+        "ClaimType": "View Inventory Items",
+        "Description": "View"
+      },
+      {
+        "ClaimType": "Create Inventory Items",
+        "Description": "Create"
+      },
+      {
+        "ClaimType": "Edit Inventory Items",
+        "Description": "Edit"
+      },
+      {
+        "ClaimType": "Delete Inventory Items",
+        "Description": "Delete"
+      }
+    ]
+  },
+  {
+    "Description": "Inventory Categories",
+    "Rights": [
+      {
+        "ClaimType": "View Inventory Category",
+        "Description": "View"
+      },
+      {
+        "ClaimType": "Create Inventory Category",
+        "Description": "Create"
+      },
+      {
+        "ClaimType": "Edit Inventory Category",
+        "Description": "Edit"
+      },
+      {
+        "ClaimType": "Delete Inventory Category",
+        "Description": "Delete"
+      }
+    ]
+  },
+  {
+    "Description": "Units of Measure",
+    "Rights": [
+      {
+        "ClaimType": "View Units of Measure",
+        "Description": "View"
+      },
+      {
+        "ClaimType": "Create Units of Measure",
+        "Description": "Create"
+      },
+      {
+        "ClaimType": "Edit Units of Measure",
+        "Description": "Edit"
+      },
+      {
+        "ClaimType": "Delete Units of Measure",
+        "Description": "Delete"
+      },
+      {
+        "ClaimType": "Manage Unit Conversions",
+        "Description": "Manage Unit Conversions"
+      }
+    ]
+  },
+  {
+    "Description": "Customers",
+    "Rights": [
+      {
+        "ClaimType": "View Customers",
+        "Description": "View"
+      },
+      {
+        "ClaimType": "Create Customers",
+        "Description": "Create"
+      },
+      {
+        "ClaimType": "Edit Customers",
+        "Description": "Edit"
+      },
+      {
+        "ClaimType": "Delete Customers",
+        "Description": "Delete"
+      },
+      {
+        "ClaimType": "Manage Customer Addresses",
+        "Description": "Manage Addresses"
+      }
+    ]
+  },
+  {
+    "Description": "Customer Types",
+    "Rights": [
+      {
+        "ClaimType": "View Customer Types",
+        "Description": "View"
+      },
+      {
+        "ClaimType": "Create Customer Types",
+        "Description": "Create"
+      },
+      {
+        "ClaimType": "Edit Customer Types",
+        "Description": "Edit"
+      },
+      {
+        "ClaimType": "Delete Customer Types",
+        "Description": "Delete"
+      }
+    ]
+  },
+  {
+    "Description": "Suppliers",
+    "Rights": [
+      {
+        "ClaimType": "View Suppliers",
+        "Description": "View"
+      },
+      {
+        "ClaimType": "Create Suppliers",
+        "Description": "Create"
+      },
+      {
+        "ClaimType": "Edit Suppliers",
+        "Description": "Edit"
+      },
+      {
+        "ClaimType": "Delete Suppliers",
+        "Description": "Delete"
+      },
+      {
+        "ClaimType": "Manage Supplier Addresses",
+        "Description": "Manage Addresses"
+      }
+    ]
+  },
+  {
+    "Description": "Supplier Types",
+    "Rights": [
+      {
+        "ClaimType": "View Supplier Types",
+        "Description": "View"
+      },
+      {
+        "ClaimType": "Create Supplier Types",
+        "Description": "Create"
+      },
+      {
+        "ClaimType": "Edit Supplier Types",
+        "Description": "Edit"
+      },
+      {
+        "ClaimType": "Delete Supplier Types",
+        "Description": "Delete"
+      }
+    ]
+  },
+  {
+    "Description": "CostCenters",
+    "Rights": [
+      {
+        "ClaimType": "View CostCenters",
+        "Description": "View"
+      },
+      {
+        "ClaimType": "Create CostCenters",
+        "Description": "Create"
+      },
+      {
+        "ClaimType": "Edit CostCenters",
+        "Description": "Edit"
+      },
+      {
+        "ClaimType": "Delete CostCenters",
+        "Description": "Delete"
+      }
+    ]
+  },
+  {
+    "Description": "PaymentTerms",
+    "Rights": [
+      {
+        "ClaimType": "View PaymentTerms",
+        "Description": "View"
+      },
+      {
+        "ClaimType": "Create PaymentTerms",
+        "Description": "Create"
+      },
+      {
+        "ClaimType": "Edit PaymentTerms",
+        "Description": "Edit"
+      },
+      {
+        "ClaimType": "Delete PaymentTerms",
+        "Description": "Delete"
+      }
+    ]
+  },
+  {
+    "Description": "ChartsofAccount",
+    "Rights": [
+      {
+        "ClaimType": "View ChartsofAccount",
+        "Description": "View"
+      },
+      {
+        "ClaimType": "Create ChartsofAccount",
+        "Description": "Create"
+      },
+      {
+        "ClaimType": "Edit ChartsofAccount",
+        "Description": "Edit"
+      },
+      {
+        "ClaimType": "Delete ChartsofAccount",
+        "Description": "Delete"
+      }
+    ]
+  },
+  {
+    "Description": "Taxes",
+    "Rights": [
+      {
+        "ClaimType": "View Taxes",
+        "Description": "View"
+      },
+      {
+        "ClaimType": "Create Taxes",
+        "Description": "Create"
+      },
+      {
+        "ClaimType": "Edit Taxes",
+        "Description": "Edit"
+      },
+      {
+        "ClaimType": "Delete Taxes",
+        "Description": "Delete"
+      },
+      {
+        "ClaimType": "Manage TaxRate",
+        "Description": "Manage Tax Rates"
+      }
+    ]
+  },
+  {
+    "Description": "School Years",
+    "Rights": [
+      {
+        "ClaimType": "View School Years",
+        "Description": "View"
+      },
+      {
+        "ClaimType": "View School Years",
+        "Description": "Create"
+      },
+      {
+        "ClaimType": "View School Years",
+        "Description": "Edit"
+      },
+      {
+        "ClaimType": "View School Years",
+        "Description": "Delete"
+      }
+    ]
+  },
+  {
+    "Description": "School Terms",
+    "Rights": [
+      {
+        "ClaimType": "View School Terms",
+        "Description": "View"
+      },
+      {
+        "ClaimType": "View School Terms",
+        "Description": "Create"
+      },
+      {
+        "ClaimType": "View School Terms",
+        "Description": "Edit"
+      },
+      {
+        "ClaimType": "View School Terms",
+        "Description": "Delete"
+      }
+    ]
+  },
+  {
+    "Description": "Blocks",
+    "Rights": [
+      {
+        "ClaimType": "View Blocks",
+        "Description": "View"
+      },
+      {
+        "ClaimType": "View Blocks",
+        "Description": "Create"
+      },
+      {
+        "ClaimType": "View Blocks",
+        "Description": "Edit"
+      },
+      {
+        "ClaimType": "View Blocks",
+        "Description": "Delete"
+      }
+    ]
+  },
+  {
+    "Description": "Class Rooms",
+    "Rights": [
+      {
+        "ClaimType": "View Class Rooms",
+        "Description": "View"
+      },
+      {
+        "ClaimType": "View Class Rooms",
+        "Description": "Create"
+      },
+      {
+        "ClaimType": "View Class Rooms",
+        "Description": "Edit"
+      },
+      {
+        "ClaimType": "View Class Rooms",
+        "Description": "Delete"
+      }
+    ]
+  },
+  {
+    "Description": "Utility Rooms",
+    "Rights": [
+      {
+        "ClaimType": "View Utility Rooms",
+        "Description": "View"
+      },
+      {
+        "ClaimType": "View Utility Rooms",
+        "Description": "Create"
+      },
+      {
+        "ClaimType": "View Utility Rooms",
+        "Description": "Edit"
+      },
+      {
+        "ClaimType": "View Utility Rooms",
+        "Description": "Delete"
+      }
+    ]
+  },
+  {
+    "Description": "Levels",
+    "Rights": [
+      {
+        "ClaimType": "View Levels",
+        "Description": "View"
+      },
+      {
+        "ClaimType": "View Levels",
+        "Description": "Create"
+      },
+      {
+        "ClaimType": "View Levels",
+        "Description": "Edit"
+      },
+      {
+        "ClaimType": "View Levels",
+        "Description": "Delete"
+      }
+    ]
+  },
+  {
+    "Description": "Teachers",
+    "Rights": [
+      {
+        "ClaimType": "View Teachers",
+        "Description": "View"
+      },
+      {
+        "ClaimType": "View Teachers",
+        "Description": "Create"
+      },
+      {
+        "ClaimType": "View Teachers",
+        "Description": "Edit"
+      },
+      {
+        "ClaimType": "View Teachers",
+        "Description": "Delete"
+      }
+    ]
+  },
+  {
+    "Description": "Subjects",
+    "Rights": [
+      {
+        "ClaimType": "View Subjects",
+        "Description": "View"
+      },
+      {
+        "ClaimType": "View Subjects",
+        "Description": "Create"
+      },
+      {
+        "ClaimType": "View Subjects",
+        "Description": "Edit"
+      },
+      {
+        "ClaimType": "View Subjects",
+        "Description": "Delete"
+      }
+    ]
+  },
+  {
+    "Description": "Students",
+    "Rights": [
+      {
+        "ClaimType": "View Students",
+        "Description": "View"
+      },
+      {
+        "ClaimType": "View Students",
+        "Description": "Create"
+      },
+      {
+        "ClaimType": "View Students",
+        "Description": "Edit"
+      },
+      {
+        "ClaimType": "View Students",
+        "Description": "Delete"
+      }
+    ]
+  },
+  {
+    "Description": "Dormitory",
+    "Rights": [
+      {
+        "ClaimType": "View Dormitory",
+        "Description": "View"
+      },
+      {
+        "ClaimType": "View Dormitory",
+        "Description": "Create"
+      },
+      {
+        "ClaimType": "View Dormitory",
+        "Description": "Edit"
+      },
+      {
+        "ClaimType": "View Dormitory",
+        "Description": "Delete"
+      }
+    ]
+  },
+  {
+    "Description": "Teaching Departments",
+    "Rights": [
+      {
+        "ClaimType": "View Teaching Departments",
+        "Description": "View"
+      },
+      {
+        "ClaimType": "View Teaching Departments",
+        "Description": "Create"
+      },
+      {
+        "ClaimType": "View Teaching Departments",
+        "Description": "Edit"
+      },
+      {
+        "ClaimType": "View Teaching Departments",
+        "Description": "Delete"
+      }
+    ]
+  }
+]

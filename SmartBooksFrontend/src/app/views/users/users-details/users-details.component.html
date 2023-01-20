@@ -1,0 +1,66 @@
+<section class="details-container">
+  <mat-divider class="padding-bottom-10"></mat-divider>
+  <div class="container-header">
+    <span class="container-header-title" *ngIf="!isMobile">
+      {{user.fullName}}
+    </span>
+    <mat-select
+      *ngIf="isMobile"
+      [(value)]="user"
+      (selectionChange)="onSelectedValueChange($event)"
+      class="mobile-list-container container-header-title">
+      <mat-option
+        *ngFor="let item of usersService.dataSource | async"
+        [value] = "item">
+        {{item.fullName}}
+      </mat-option>
+    </mat-select>
+    <span class="header-spacer"></span>
+    <button mat-raised-button
+            color="primary"
+            title="Add user"
+            (click)="onCreate()">
+            <mat-icon>account_box</mat-icon> Add User
+    </button>
+  </div>
+  <mat-divider class="padding-top-10"></mat-divider>
+
+  <mat-card class="rep-details">
+    <mat-card-content>
+      <mat-list role="list">
+        <mat-list-item role="listitem"
+                       class="record-field-Item">
+          <span class="item-detail detail-caption">
+            User Name
+          </span>
+          <span class="item-detail">
+            {{user.email}}
+          </span>
+        </mat-list-item>
+        <mat-list-item role="listitem"
+                       class="record-field-Item">
+          <span class="item-detail detail-caption">
+            Full Name
+          </span>
+          <span class="item-detail">
+            {{user.fullName}}
+          </span>
+        </mat-list-item>
+        <mat-list-item role="listitem"
+                       class="record-field-Item">
+          <span class="item-detail detail-caption">
+            Phone Number
+          </span>
+          <span class="item-detail">
+            {{user.phoneNumber}}
+          </span>
+        </mat-list-item>
+      </mat-list>
+
+      <app-spinner *ngIf="!usersService.recordsFetched"></app-spinner>
+
+      <app-users-rights-list></app-users-rights-list>
+    </mat-card-content>
+  </mat-card>
+
+</section>

@@ -1,0 +1,114 @@
+import { WarehouseComponent } from './../warehouse/warehouse.component';
+import { WarehouseService } from './../../../services/warehouse.service';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatSort } from '@angular/material/sort';
+import { MatPaginator } from '@angular/material/paginator';
+import { Warehouse } from 'src/app/models/warehouse';
+import { Observable, Subscription } from 'rxjs';
+import { ConfirmDialogService } from 'src/app/shared/services/confirm-dialog.service';
+import { NotificationService } from 'src/app/shared/services/notification.service';
+import { MatDialog } from '@angular/material/dialog';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { map, shareReplay } from 'rxjs/operators';
+
+@Component({
+  selector: 'app-warehouse-list',
+  templateUrl: './warehouse-list.component.html',
+  styleUrls: ['./warehouse-list.component.css']
+})
+export class WarehouseListComponent implements OnInit, OnDestroy {
+
+  listData: MatTableDataSource<Warehouse>;
+  displayedColumns: string[] = ['code', 'description', 'actions'];
+  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+
+  isMobile: boolean;
+  private selectedwarehouseId = 0;
+  private subscriptions: Subscription = new Subscription();
+
+  private isHandset: Observable<boolean> = this.breakpointObserver.observe([
+    Breakpoints.XSmall,
+    Breakpoints.Small
+  ])
+    .pipe(
+      map(result => result.matches),
+      shareReplay()
+    );
+
+  constructor(
+    private warehouseService: WarehouseService,
+    private breakpointObserver: BreakpointObserver,
+    private dialog: MatDialog,
+    private confrimDialog: ConfirmDialogService,
+    private notificationService: NotificationService) {}
+
+  ngOnInit(): void {
+    this.subscriptions.add(
+      this.isHandset.subscribe(
+        res => {
+          this.isMobile = res;
+        }
+    ));
+    this.warehouseService.onGet();
+    this.subscriptions.add(
+      this.warehouseService.dataSource.subscribe(
+        res => {
+          this.listData = new MatTableDataSource(res);
+          this.listData.sort = this.sort;
+          this.listData.paginator = this.paginator;
+          if (res.length > 0) {
+            if (this.selectedwarehouseId > 0) {
+              this.onRowClicked(res.find(e => e.id === this.selectedwarehouseId));
+            } else {
+              this.onRowClicked(res[0]);
+            }
+          }
+        }
+    ));
+  }
+
+  ngOnDestroy(): void {
+    this.subscriptions.unsubscribe();
+  }
+
+  isSelectedRow(id: number): boolean {
+    return this.selectedwarehouseId === id;
+  }
+
+  onRowClicked(warehouse: Warehouse): void {
+    this.selectedwarehouseId = warehouse.id;
+    this.warehouseService.setSelectedWarehouse(warehouse);
+  }
+
+  onEdit(warehouse: Warehouse): void {
+    this.warehouseService.populateWarehouseFormGroup(warehouse);
+    this.dialog.open(WarehouseComponent, {
+      disableClose: true,
+      autoFocus: true,
+      width: '100%',
+      position: {top: '10px'},
+      panelClass: this.isMobile ? 'form-dialog-container-mobile' : 'form-dialog-container'
+    });
+  }
+
+  onDelete(id: number): void {
+    this.subscriptions.add(
+      this.confrimDialog.openConfirmDialog('Are you sure to delete this record?')
+      .afterClosed().subscribe(res => {
+        if (res){
+          this.warehouseService.onDelete(id)
+          .subscribe(
+            _ => {
+              this.notificationService.success(' Deleted successfully');
+            },
+            err => {
+              this.notificationService.warn(err.error);
+            }
+          );
+        }
+    }));
+  }
+
+}

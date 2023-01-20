@@ -1,0 +1,84 @@
+Opening connection to database 'smartbookscontextdb' on server 'localhost'.
+Opened connection to database 'smartbookscontextdb' on server 'localhost'.
+Beginning transaction with isolation level 'Unspecified'.
+Began transaction with isolation level 'Unspecified'.
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Transactions` ADD `EmailAddress` longtext CHARACTER SET utf8mb4 NULL;
+Executed DbCommand (3,521ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Transactions` ADD `EmailAddress` longtext CHARACTER SET utf8mb4 NULL;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Transactions` ADD `EmailMessage` longtext CHARACTER SET utf8mb4 NULL;
+Executed DbCommand (1,455ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Transactions` ADD `EmailMessage` longtext CHARACTER SET utf8mb4 NULL;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Transactions` ADD `EmailStatus` int NOT NULL DEFAULT 0;
+Executed DbCommand (1,162ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Transactions` ADD `EmailStatus` int NOT NULL DEFAULT 0;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Currencies` ADD `DecimalMark` longtext CHARACTER SET utf8mb4 NULL;
+Executed DbCommand (2,384ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Currencies` ADD `DecimalMark` longtext CHARACTER SET utf8mb4 NULL;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Currencies` ADD `NumericCode` int NOT NULL DEFAULT 0;
+Executed DbCommand (983ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Currencies` ADD `NumericCode` int NOT NULL DEFAULT 0;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Currencies` ADD `Priority` int NOT NULL DEFAULT 0;
+Executed DbCommand (662ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Currencies` ADD `Priority` int NOT NULL DEFAULT 0;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Currencies` ADD `SubUnit` longtext CHARACTER SET utf8mb4 NULL;
+Executed DbCommand (886ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Currencies` ADD `SubUnit` longtext CHARACTER SET utf8mb4 NULL;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Currencies` ADD `SubUnitToUnit` int NOT NULL DEFAULT 0;
+Executed DbCommand (1,139ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Currencies` ADD `SubUnitToUnit` int NOT NULL DEFAULT 0;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Currencies` ADD `Symbol` longtext CHARACTER SET utf8mb4 NULL;
+Executed DbCommand (1,755ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Currencies` ADD `Symbol` longtext CHARACTER SET utf8mb4 NULL;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Currencies` ADD `SymbolFirst` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (1,209ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Currencies` ADD `SymbolFirst` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Currencies` ADD `ThousandSeparator` longtext CHARACTER SET utf8mb4 NULL;
+Executed DbCommand (1,549ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Currencies` ADD `ThousandSeparator` longtext CHARACTER SET utf8mb4 NULL;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20210211080535_updating currencies', '5.0.2');
+Executed DbCommand (449ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20210211080535_updating currencies', '5.0.2');
+Committing transaction.
+Committed transaction.
+Disposing transaction.
+Closing connection to database 'smartbookscontextdb' on server 'localhost'.
+Closed connection to database 'smartbookscontextdb' on server 'localhost'.
+'SmartBooksContext' disposed.

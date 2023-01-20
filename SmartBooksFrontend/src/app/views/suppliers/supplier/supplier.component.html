@@ -1,0 +1,296 @@
+<mat-toolbar class="display-flex">
+  <span>{{service.form.controls['id'].value?"Edit Supplier":"New Supplier"}}</span>
+  <span class="fill-remaining-space"></span>
+  <button class="btn-dialog-close"
+          mat-stroked-button
+          (click)="onClose()"
+          tabIndex="-1"><mat-icon>clear</mat-icon></button>
+</mat-toolbar>
+<mat-divider class="padding-top-10"></mat-divider>
+
+<form [formGroup] = 'service.form'
+(ngSubmit) = 'onSubmit()'>
+<mat-card class="register-card">
+  <mat-dialog-content>
+  <mat-card-content>
+    <mat-grid-list cols="2" rowHeight="60px">
+      <mat-grid-tile [colspan]= "2">
+        <mat-form-field class="full-width-field">
+          <mat-label class="mat-label">Company Name</mat-label>
+          <input matInput
+                type="text"
+                name="name"
+                formControlName="name"
+                required/>
+          <mat-error *ngIf="service.form.controls.name.errors?.required">
+            Name is required
+          </mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field class="full-width-field">
+          <mat-label class="mat-label">Account Number</mat-label>
+          <input matInput
+                type="text"
+                name="accountNumber"
+                formControlName="accountNumber"/>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field class="full-width-field"
+          role="group">
+          <mat-label class="mat-label">
+            Currency
+          </mat-label>
+          <mat-select
+            [formControl]="service.form.controls.currencyId">
+            <mat-option
+              *ngFor="let currency of companyService.currencyDataSource |async"
+              [value]="currency.id">
+              {{currency.name}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="service.form.controls.currencyId.errors?.required">
+            Currency is required
+          </mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+
+
+      <div *ngIf="saving">
+        <app-spinner></app-spinner>
+      </div>
+      <mat-grid-tile>
+        <mat-form-field class="full-width-field">
+          <mat-label class="mat-label">First Name</mat-label>
+          <input matInput
+                type="text"
+                name="firstName"
+                formControlName="firstName"/>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field class="full-width-field">
+          <mat-label class="mat-label">Last Name</mat-label>
+          <input matInput
+                type="text"
+                name="firstName"
+                formControlName="lastName"/>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field class="full-width-field">
+          <mat-label class="mat-label">Email</mat-label>
+          <input matInput
+                type="text"
+                name="email"
+                formControlName="email"/>
+          <mat-error *ngIf="service.form.controls.email.errors?.email">
+            Enter a valid email address
+          </mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field class="full-width-field">
+          <mat-label class="mat-label">Phone Number</mat-label>
+          <input matInput
+                type="text"
+                name="phoneNumber"
+                formControlName="phoneNumber"/>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field class="full-width-field">
+          <mat-label class="mat-label">VAT</mat-label>
+          <input matInput
+                type="text"
+                name="vatNumber"
+                formControlName="vatNumber"/>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field class="full-width-field">
+          <mat-label class="mat-label">PIN</mat-label>
+          <input matInput
+                type="text"
+                name="pin"
+                formControlName="pin"/>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field class="full-width-field">
+          <mat-label class="mat-label">ID Number</mat-label>
+          <input matInput
+                type="text"
+                name="idNumber"
+                formControlName="idNumber"/>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field class="full-width-field">
+          <mat-label class="mat-label">Credit Limit</mat-label>
+          <input matInput
+                type="number"
+                name="creditLimit"
+                formControlName="creditLimit"/>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field class="full-width-field">
+          <mat-label class="mat-label">Credit Limit Period</mat-label>
+          <input matInput
+                type="number"
+                name="creditLimitPeriod"
+                formControlName="creditLimitPeriod"/>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field class="full-width-field"
+          role="group">
+          <mat-label class="mat-label">
+            Supplier Type
+          </mat-label>
+          <mat-select
+            [formControl]="service.form.controls.categoryId">
+            <mat-option
+              *ngFor="let cat of supplierTypesService.dataSource |async"
+              [value]="cat.id">
+              {{cat.description}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field class="full-width-field"
+          role="group">
+          <mat-label class="mat-label">
+            Payment Term
+          </mat-label>
+          <mat-select
+            [formControl]="service.form.controls.paymentTermId">
+            <mat-option
+              *ngFor="let term of paymentTermsService.dataSource |async"
+              [value]="term.id">
+              {{term.description}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field class="full-width-field"
+          role="group">
+          <mat-label class="mat-label">
+            Accounts Payable
+          </mat-label>
+          <mat-select
+            [formControl]="service.form.controls.ledgerAccountId">
+            <mat-option
+              *ngFor="let account of chartofaccountService.postingDataSource |async"
+              [value]="account.id">
+              {{account.accountName}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile *ngIf="service.form.controls['id'].value">
+        <mat-form-field class="full-width-field">
+          <mat-label class="mat-label">
+            Default Address
+          </mat-label>
+          <mat-select [formControl]="service.form.controls.defaultAddressId">
+            <mat-option *ngFor="let address of selectedSupplier.organisationAddresses"
+              [value]="address.id">
+              {{address.location}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile *ngIf="!service.form.controls['id'].value">
+
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field class="full-width-field"
+          role="group">
+          <mat-label class="mat-label">
+            Bank
+          </mat-label>
+          <mat-select
+            [formControl]="service.form.controls.bankId"
+            (selectionChange)="onBankSelected($event)">
+            <mat-option
+              *ngFor="let bank of companyService.bankDataSource |async"
+              [value]="bank.id">
+              {{bank.bankName}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field class="full-width-field"
+          role="group">
+          <mat-label class="mat-label">
+            Bank Branch
+          </mat-label>
+          <mat-select
+            [formControl]="service.form.controls.bankBranchId">
+            <mat-option
+              *ngFor="let branch of bankBranches"
+              [value]="branch.id">
+              {{branch.branchName}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field class="full-width-field">
+          <mat-label class="mat-label">Bank Account Number</mat-label>
+          <input matInput
+                type="text"
+                name="bankAccountNumber"
+                formControlName="bankAccountNumber"/>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <!-- <mat-grid-tile>
+        <mat-form-field class="full-width-field">
+          <mat-checkbox
+          name="isTaxAgency"
+          formControlName="isTaxAgency">
+            Is Tax Agency
+          </mat-checkbox>
+        </mat-form-field>
+      </mat-grid-tile> -->
+
+
+
+  </mat-grid-list>
+  </mat-card-content>
+</mat-dialog-content>
+  <mat-card-actions class="form-actions">
+    <button mat-raised-button
+            type="button"
+            (click)="onClose()"
+            class="btn-form-actions btn-form-actions-cancel">
+            Cancel
+    </button>
+
+    <button mat-raised-button
+            type="submit"
+            class="btn-form-actions"
+            color = 'primary'>
+            Save
+    </button>
+  </mat-card-actions>
+</mat-card>
+</form>

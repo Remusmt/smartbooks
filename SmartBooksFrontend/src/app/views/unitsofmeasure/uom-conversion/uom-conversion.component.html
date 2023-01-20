@@ -1,0 +1,119 @@
+<mat-toolbar class="display-flex">
+  <span>New Unit Conversion</span>
+  <span class="fill-remaining-space"></span>
+  <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabIndex="-1"><mat-icon>clear</mat-icon></button>
+</mat-toolbar>
+<mat-divider class="padding-top-10"></mat-divider>
+<mat-toolbar class="display-flex">
+  <span>From : {{unitofMeasure.abbreviation}} - {{unitofMeasure.description}}</span>
+  <span class="fill-remaining-space"></span>
+</mat-toolbar>
+<mat-divider class="padding-top-10"></mat-divider>
+<mat-dialog-content>
+  <mat-vertical-stepper linear #stepper>
+
+    <mat-step [stepControl]="service.uomConversionForm" editable class="vertical-content-container">
+      <form [formGroup]="service.uomConversionForm">
+        <ng-template matStepLabel>Select a target unit of measure </ng-template>
+        <mat-form-field>
+          <mat-label class="mat-label">
+            Converting to
+          </mat-label>
+          <mat-select
+            [formControl]="service.uomConversionForm.controls.unitofMeasureToId"
+            (selectionChange)="onSelectedValueChange($event)"
+            required>
+            <mat-option
+              *ngFor="let uom of getUomsByType()"
+              [value]="uom.id">
+              {{uom.abbreviation}} - {{uom.description}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="service.uomConversionForm.controls.unitofMeasureToId.errors?.required">
+            Select unit of measure to convert to
+          </mat-error>
+        </mat-form-field>
+        <div class="action-container">
+          <button mat-raised-button
+                  color="primary"
+                  matStepperNext>
+                  Next
+          </button>
+        </div>
+      </form>
+    </mat-step>
+    <app-spinner *ngIf="saving"></app-spinner>
+    <mat-step>
+      <ng-template matStepLabel>Units relationship</ng-template>
+      <div class="radio-group-container">
+        <span class="step-page-header">
+          Inorder to help determine your unit conversion, select the true statement
+        </span>
+        <mat-radio-group aria-label="Select an option"
+          class="radio-group">
+          <mat-radio-button value="true" (change)="onGreaterChanged()" class="radio-btn" checked>
+            1 {{unitofMeasure.abbreviation}} is greater than 1 {{unitTo?.abbreviation}}
+          </mat-radio-button>
+          <mat-radio-button value="false" class="radio-btn" (change)="onGreaterChanged()" >
+            1 {{unitTo.abbreviation}} is greater than 1 {{unitofMeasure.abbreviation}}
+          </mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="action-container">
+        <button mat-raised-button
+                matStepperPrevious
+                class="nav-btn">Back</button>
+        <button mat-raised-button
+                color="primary"
+                matStepperNext
+                class="nav-btn">Next</button>
+      </div>
+    </mat-step>
+    <mat-step>
+      <form [formGroup]="service.uomConversionForm">
+        <ng-template matStepLabel>Finish</ng-template>
+
+        <div class="step-form-container">
+          <mat-form-field class="factor-field">
+            <mat-label class="mat-label">Factor</mat-label>
+            <input matInput
+                  type="number"
+                  name="factor"
+                  formControlName="factor"
+                  (change)="onFactorChange()"
+                  required/>
+            <span matPrefix *ngIf="selectedIsGreater"> 1 {{unitofMeasure.abbreviation}} = &nbsp;</span>
+            <span matPrefix *ngIf="!selectedIsGreater"> 1 {{unitTo.abbreviation}} = &nbsp;</span>
+            <span matSuffix *ngIf="selectedIsGreater">&nbsp; {{unitTo.abbreviation}}</span>
+            <span matSuffix *ngIf="!selectedIsGreater">&nbsp; {{unitofMeasure.abbreviation}}</span>
+            <mat-error *ngIf="service.uomConversionForm.controls.factor.errors?.required">
+              Factor must be greater than zero
+            </mat-error>
+          </mat-form-field>
+          <div class="conversion-summary">
+            <span class="summary-title">
+              Conversion Summary
+            </span>
+            <p>
+              Verify that the conversion is correct. Press the back button if changes are neccessary.
+            </p>
+            <span class="conversion-description">
+              {{description}}
+            </span>
+          </div>
+        </div>
+
+        <div class="action-container">
+          <button mat-raised-button
+                  matStepperPrevious
+                  class="nav-btn">Back</button>
+          <button mat-raised-button
+                  color="primary"
+                  (click)="onSubmit()"
+                  class="nav-btn">Finish</button>
+        </div>
+      </form>
+    </mat-step>
+  </mat-vertical-stepper>
+</mat-dialog-content>
+

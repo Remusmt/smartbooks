@@ -1,0 +1,66 @@
+<section class="details-container">
+  <mat-divider class="padding-bottom-10"></mat-divider>
+  <div class="container-header">
+    <span class="container-header-title" *ngIf="!isMobile">
+      {{selected.description}}
+    </span>
+    <mat-select
+      *ngIf="isMobile"
+      [(value)]="selected"
+      (selectionChange)="onSelectedValueChange($event)"
+      class="mobile-list-container container-header-title">
+      <mat-option
+        *ngFor="let item of service.dataSource | async"
+        [value] = "item">
+        {{item.description}}
+      </mat-option>
+    </mat-select>
+    <span class="header-spacer"></span>
+    <button mat-raised-button
+            color="primary"
+            title="Add user"
+            (click)="onCreate()">
+            <mat-icon>square_foot</mat-icon> Add UoM
+    </button>
+  </div>
+  <mat-divider class="padding-top-10"></mat-divider>
+
+  <mat-card class="rep-details">
+    <mat-card-content>
+      <mat-list role="list">
+        <mat-list-item role="listitem"
+                       class="record-field-Item">
+          <span class="item-detail detail-caption">
+            Abbreviation
+          </span>
+          <span class="item-detail">
+            {{selected.abbreviation}}
+          </span>
+        </mat-list-item>
+        <mat-list-item role="listitem"
+                       class="record-field-Item">
+          <span class="item-detail detail-caption">
+            Description
+          </span>
+          <span class="item-detail">
+            {{selected.description}}
+          </span>
+        </mat-list-item>
+        <mat-list-item role="listitem"
+                       class="record-field-Item">
+          <span class="item-detail detail-caption">
+            Type
+          </span>
+          <span class="item-detail">
+            {{service.getTypeDescription(selected.type)}}
+          </span>
+        </mat-list-item>
+      </mat-list>
+
+      <app-spinner *ngIf="!service.wasFetched"></app-spinner>
+
+      <app-uom-conversions-list></app-uom-conversions-list>
+    </mat-card-content>
+  </mat-card>
+
+</section>

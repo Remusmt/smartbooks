@@ -1,0 +1,118 @@
+[
+  {
+    "GroupName": "Inventory",
+    "SystemModule": "Inventory",
+    "Icon": "warehouse-icon.png",
+    "ImageIcon": "true",
+    "Menus": [
+      {
+        "Description": "Inventory",
+        "SystemType": "Inventory Items",
+        "LinkUrl": "/app/inventory",
+        "Icon": "warehouse-icon.png",
+        "ImageIcon": "true"
+      },
+      {
+        "Description": "Warehouses",
+        "SystemType": "Warehouses",
+        "LinkUrl": "/app/warehouses",
+        "Icon": "home_work"
+      },
+      {
+        "Description": "Categories",
+        "SystemType": "Inventory Category",
+        "LinkUrl": "/app/inventorycategories",
+        "Icon": "category"
+      },
+      {
+        "Description": "Units of Measure",
+        "SystemType": "Units of Measure",
+        "LinkUrl": "/app/uoms",
+        "Icon": "square_foot"
+      }
+    ]
+  },
+  {
+    "GroupName": "Sales",
+    "SystemModule": "Sales",
+    "Icon": "receipt",
+    "Menus": [
+      {
+        "Description": "Sales Center",
+        "SystemType": "Customers",
+        "LinkUrl": "/app/sales",
+        "Icon": "shop"
+      },
+      {
+        "Description": "Customer Types",
+        "SystemType": "Customer Types",
+        "LinkUrl": "/app/customertypes",
+        "Icon": "supervisor_account"
+      },
+      {
+        "Description": "Payment Terms",
+        "SystemType": "Payment Terms",
+        "LinkUrl": "/app/paymentTerms",
+        "Icon": ""
+      }
+    ]
+  },
+  {
+    "GroupName": "Purchases",
+    "SystemModule": "Purchases",
+    "Icon": "shopping_basket",
+    "Menus": [
+      {
+        "Description": "Purchases Center",
+        "SystemType": "Suppliers",
+        "LinkUrl": "/app/purchases",
+        "Icon": "payment"
+      },
+      {
+        "Description": "Supplier Types",
+        "SystemType": "Supplier Types",
+        "LinkUrl": "/app/suppliertypes",
+        "Icon": "people_outline"
+      }
+    ]
+  },
+  {
+    "GroupName": "Accounts",
+    "SystemModule": "Accounts",
+    "Icon": "local_atm",
+    "Menus": [
+      {
+        "Description": "Charts of Account",
+        "SystemType": "ChartsofAccount",
+        "LinkUrl": "/app/chartsofaccount",
+        "Icon": "format_align_left"
+      },
+      {
+        "Description": "CostCenters",
+        "SystemType": "CostCenters",
+        "LinkUrl": "/app/costcenters",
+        "Icon": "dynamic_feed"
+      },
+      {
+        "Description": "Taxes",
+        "SystemType": "Taxes",
+        "LinkUrl": "/app/taxes",
+        "Icon": "money_off"
+      }
+    ]
+  },
+  {
+    "GroupName": "General Setup",
+    "SystemModule": "Accounts",
+    "Icon": "settings_applications",
+    "Menus": [
+      {
+        "Description": "Payment Terms",
+        "SystemType": "PaymentTerms",
+        "LinkUrl": "/app/paymentterms",
+        "Icon": "redeem"
+      }
+    ]
+  }
+]
+

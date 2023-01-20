@@ -1,0 +1,5 @@
+# SmartBooks
+This is a project to create a user friendly ERP solutions, for business owners, people who don't necessary have accounting or IT knowledge. So the goal is to provide them with a straight forward solution, to ease their daily chores of running of their businesses.
+By providing pettycash management with integration with Mpesa and banks, sales reps management => a simplified crm based on sales reps, account receivable management with ease of bad debt management, accounts payable management. A general ledger with journal entries for accounts to be able to help when need be. Inventory managemnt, with a comprehesive warehouse management, a common sense payroll system, a simple fleet manager and other modules as they come.
+This system will be guided by common sense and alot of default settings, this will enable first time users to start easily and get to change things slowly as they get used to the system.
+The system will be designed with self containing modules and expose or consume third party or other modules functionalities through interfaces.

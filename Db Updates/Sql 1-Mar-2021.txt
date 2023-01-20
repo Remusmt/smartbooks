@@ -1,0 +1,524 @@
+ALTER TABLE `SubLedgerBases` DROP COLUMN `IdBackAttachmentId`;
+Executed DbCommand (11,889ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `SubLedgerBases` DROP COLUMN `IdBackAttachmentId`;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `SubLedgerBases` DROP COLUMN `IdFrontAttachmentId`;
+Executed DbCommand (7,340ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `SubLedgerBases` DROP COLUMN `IdFrontAttachmentId`;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `SubLedgerBases` DROP COLUMN `PassportCopyId`;
+Executed DbCommand (6,738ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `SubLedgerBases` DROP COLUMN `PassportCopyId`;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `SubLedgerBases` DROP COLUMN `PassportPhotoId`;
+Executed DbCommand (11,570ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `SubLedgerBases` DROP COLUMN `PassportPhotoId`;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `SubLedgerBases` DROP COLUMN `SignatureId`;
+Executed DbCommand (15,896ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `SubLedgerBases` DROP COLUMN `SignatureId`;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `SaccoSettings` DROP COLUMN `MembershipFeeAmount`;
+Executed DbCommand (3,540ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `SaccoSettings` DROP COLUMN `MembershipFeeAmount`;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `MemberAccountTypes` DROP COLUMN `MinimumAmount`;
+Executed DbCommand (6,203ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `MemberAccountTypes` DROP COLUMN `MinimumAmount`;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `MemberAccountTypes` DROP COLUMN `SharesItem_MinimumAmount`;
+Executed DbCommand (6,461ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `MemberAccountTypes` DROP COLUMN `SharesItem_MinimumAmount`;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Transactions` RENAME COLUMN `OrganisationId` TO `SubLedgerBaseId`;
+Executed DbCommand (3,466ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Transactions` RENAME COLUMN `OrganisationId` TO `SubLedgerBaseId`;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `MemberAccountTypes` RENAME COLUMN `MinContributionBeforeWithdraw` TO `SaccoFeesType`;
+Executed DbCommand (529ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `MemberAccountTypes` RENAME COLUMN `MinContributionBeforeWithdraw` TO `SaccoFeesType`;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Warehouses` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (7,412ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Warehouses` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `UtilityRooms` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (1,567ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `UtilityRooms` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `UomConversions` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (3,934ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `UomConversions` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `UnitofMeasures` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (2,894ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `UnitofMeasures` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Transactions` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (2,280ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Transactions` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `TransactionItems` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (4,256ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `TransactionItems` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `TeachingDepartments` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (3,561ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `TeachingDepartments` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `TaxRates` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (2,731ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `TaxRates` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Taxes` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (2,657ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Taxes` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `SubLedgerBases` ADD `SharesContribution` decimal(18,6) NULL;
+Executed DbCommand (5,000ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `SubLedgerBases` ADD `SharesContribution` decimal(18,6) NULL;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `SubLedgerBases` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (1,833ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `SubLedgerBases` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Subjects` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (1,937ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Subjects` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `SchoolYears` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (1,242ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `SchoolYears` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `SchoolTerms` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (1,929ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `SchoolTerms` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `SaccoSettings` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (1,763ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `SaccoSettings` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `ReorderLevels` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (4,874ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `ReorderLevels` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `PaymentTerms` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (4,838ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `PaymentTerms` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `PaymentMethods` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (3,470ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `PaymentMethods` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `NextOfKins` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (3,524ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `NextOfKins` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `MemberAttachments` ADD `AttachmentType` int NOT NULL DEFAULT 0;
+Executed DbCommand (2,652ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `MemberAttachments` ADD `AttachmentType` int NOT NULL DEFAULT 0;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `MemberAttachments` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (7,751ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `MemberAttachments` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `MemberApprovals` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (1,941ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `MemberApprovals` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `MemberAccountTypes` ADD `Amount` decimal(18,6) NOT NULL DEFAULT 0.0;
+Executed DbCommand (2,066ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `MemberAccountTypes` ADD `Amount` decimal(18,6) NOT NULL DEFAULT 0.0;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `MemberAccountTypes` ADD `AutoGenerateAccountNumbers` tinyint(1) NULL;
+Executed DbCommand (1,023ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `MemberAccountTypes` ADD `AutoGenerateAccountNumbers` tinyint(1) NULL;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `MemberAccountTypes` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (1,912ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `MemberAccountTypes` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Levels` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (2,155ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Levels` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `LedgerEntries` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (1,890ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `LedgerEntries` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `LedgerAccounts` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (1,517ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `LedgerAccounts` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Journals` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (1,890ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Journals` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `JournalDetails` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (1,066ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `JournalDetails` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `InventoryLedgers` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (1,930ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `InventoryLedgers` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `InventoryItems` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (9,790ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `InventoryItems` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `GeneralLedgers` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (2,852ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `GeneralLedgers` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `FinancialYears` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (1,296ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `FinancialYears` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Dormitories` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (2,095ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Dormitories` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `DocumentSettings` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (2,488ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `DocumentSettings` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `CustomerProjects` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (1,147ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `CustomerProjects` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `CurrencyConversions` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (2,898ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `CurrencyConversions` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Currencies` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (2,014ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Currencies` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Countries` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (1,422ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Countries` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `CompanyDefaults` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (2,409ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `CompanyDefaults` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Companies` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (1,152ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Companies` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `ClassRooms` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (1,961ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `ClassRooms` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `ClassRegisters` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (2,274ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `ClassRegisters` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `ClassRegisterDetails` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (1,952ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `ClassRegisterDetails` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Categories` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (3,226ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Categories` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Blocks` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (1,701ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Blocks` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Bins` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (1,247ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Bins` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `BinCards` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (4,106ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `BinCards` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Banks` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (3,200ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Banks` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `BankBranches` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (817ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `BankBranches` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `AuditLogs` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (1,818ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `AuditLogs` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Attachments` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (2,266ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Attachments` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Addresses` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+Executed DbCommand (2,761ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `Addresses` ADD `SystemGenerated` tinyint(1) NOT NULL DEFAULT FALSE;
+
+ALTER TABLE `GeneralLedgers` DROP FOREIGN KEY `FK_GeneralLedgers_TransactionItems_TransactionItemId`;
+Executed DbCommand (2,592ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `GeneralLedgers` DROP FOREIGN KEY `FK_GeneralLedgers_TransactionItems_TransactionItemId`;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `JournalDetails` DROP FOREIGN KEY `FK_JournalDetails_TransactionItems_TransactionItemId`;
+Executed DbCommand (1,073ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `JournalDetails` DROP FOREIGN KEY `FK_JournalDetails_TransactionItems_TransactionItemId`;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+DROP TABLE `TransactionItems`;
+Executed DbCommand (1,683ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+DROP TABLE `TransactionItems`;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `GeneralLedgers` RENAME COLUMN `TransactionItemId` TO `TransactionDetailId`;
+Executed DbCommand (931ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `GeneralLedgers` RENAME COLUMN `TransactionItemId` TO `TransactionDetailId`;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `GeneralLedgers` RENAME INDEX `IX_GeneralLedgers_TransactionItemId` TO `IX_GeneralLedgers_TransactionDetailId`;
+Executed DbCommand (541ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `GeneralLedgers` RENAME INDEX `IX_GeneralLedgers_TransactionItemId` TO `IX_GeneralLedgers_TransactionDetailId`;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE `TransactionDetails` (
+    `Id` int NOT NULL AUTO_INCREMENT,
+    `TransactionId` int NOT NULL,
+    `Description` longtext CHARACTER SET utf8mb4 NULL,
+    `Amount` decimal(18,6) NOT NULL,
+    `CostCenterId` int NULL,
+    `InventoryItemId` int NULL,
+    `IsDeleted` tinyint(1) NOT NULL,
+    `UpdateCode` int NOT NULL,
+    `SystemGenerated` tinyint(1) NOT NULL,
+    `CompanyId` int NOT NULL,
+    `CreatedOn` datetime(6) NOT NULL,
+    `CreatedBy` int NOT NULL,
+    `CreatedByName` varchar(150) CHARACTER SET utf8mb4 NULL,
+    CONSTRAINT `PK_TransactionDetails` PRIMARY KEY (`Id`),
+    CONSTRAINT `FK_TransactionDetails_Categories_CostCenterId` FOREIGN KEY (`CostCenterId`) REFERENCES `Categories` (`Id`) ON DELETE RESTRICT,
+    CONSTRAINT `FK_TransactionDetails_InventoryItems_InventoryItemId` FOREIGN KEY (`InventoryItemId`) REFERENCES `InventoryItems` (`Id`) ON DELETE RESTRICT,
+    CONSTRAINT `FK_TransactionDetails_Transactions_TransactionId` FOREIGN KEY (`TransactionId`) REFERENCES `Transactions` (`Id`) ON DELETE CASCADE
+);
+Executed DbCommand (1,532ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE `TransactionDetails` (
+    `Id` int NOT NULL AUTO_INCREMENT,
+    `TransactionId` int NOT NULL,
+    `Description` longtext CHARACTER SET utf8mb4 NULL,
+    `Amount` decimal(18,6) NOT NULL,
+    `CostCenterId` int NULL,
+    `InventoryItemId` int NULL,
+    `IsDeleted` tinyint(1) NOT NULL,
+    `UpdateCode` int NOT NULL,
+    `SystemGenerated` tinyint(1) NOT NULL,
+    `CompanyId` int NOT NULL,
+    `CreatedOn` datetime(6) NOT NULL,
+    `CreatedBy` int NOT NULL,
+    `CreatedByName` varchar(150) CHARACTER SET utf8mb4 NULL,
+    CONSTRAINT `PK_TransactionDetails` PRIMARY KEY (`Id`),
+    CONSTRAINT `FK_TransactionDetails_Categories_CostCenterId` FOREIGN KEY (`CostCenterId`) REFERENCES `Categories` (`Id`) ON DELETE RESTRICT,
+    CONSTRAINT `FK_TransactionDetails_InventoryItems_InventoryItemId` FOREIGN KEY (`InventoryItemId`) REFERENCES `InventoryItems` (`Id`) ON DELETE RESTRICT,
+    CONSTRAINT `FK_TransactionDetails_Transactions_TransactionId` FOREIGN KEY (`TransactionId`) REFERENCES `Transactions` (`Id`) ON DELETE CASCADE
+);
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX `IX_TransactionDetails_CostCenterId` ON `TransactionDetails` (`CostCenterId`);
+Executed DbCommand (894ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX `IX_TransactionDetails_CostCenterId` ON `TransactionDetails` (`CostCenterId`);
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX `IX_TransactionDetails_InventoryItemId` ON `TransactionDetails` (`InventoryItemId`);
+Executed DbCommand (2,262ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX `IX_TransactionDetails_InventoryItemId` ON `TransactionDetails` (`InventoryItemId`);
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX `IX_TransactionDetails_TransactionId` ON `TransactionDetails` (`TransactionId`);
+Executed DbCommand (573ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX `IX_TransactionDetails_TransactionId` ON `TransactionDetails` (`TransactionId`);
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `GeneralLedgers` ADD CONSTRAINT `FK_GeneralLedgers_TransactionDetails_TransactionDetailId` FOREIGN KEY (`TransactionDetailId`) REFERENCES `TransactionDetails` (`Id`) ON DELETE RESTRICT;
+Executed DbCommand (3,731ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `GeneralLedgers` ADD CONSTRAINT `FK_GeneralLedgers_TransactionDetails_TransactionDetailId` FOREIGN KEY (`TransactionDetailId`) REFERENCES `TransactionDetails` (`Id`) ON DELETE RESTRICT;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `JournalDetails` ADD CONSTRAINT `FK_JournalDetails_TransactionDetails_TransactionItemId` FOREIGN KEY (`TransactionItemId`) REFERENCES `TransactionDetails` (`Id`) ON DELETE RESTRICT;
+Executed DbCommand (7,316ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `JournalDetails` ADD CONSTRAINT `FK_JournalDetails_TransactionDetails_TransactionItemId` FOREIGN KEY (`TransactionItemId`) REFERENCES `TransactionDetails` (`Id`) ON DELETE RESTRICT;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20210301101201_rename item to details', '5.0.2');
+Executed DbCommand (331ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20210301101201_rename item to details', '5.0.2');
+Committing transaction.
+Committed transaction.
+Disposing transaction.
+Closing connection to database 'smartbookscontextdb' on server 'localhost'.
+Closed connection to database 'smartbookscontextdb' on server 'localhost'.
+'SmartBooksContext' disposed.
+
+
+Opened connection to database 'smartbookscontextdb' on server 'localhost'.
+Beginning transaction with isolation level 'Unspecified'.
+Began transaction with isolation level 'Unspecified'.
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `JournalDetails` DROP FOREIGN KEY `FK_JournalDetails_TransactionDetails_TransactionItemId`;
+Executed DbCommand (2,783ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `JournalDetails` DROP FOREIGN KEY `FK_JournalDetails_TransactionDetails_TransactionItemId`;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `JournalDetails` RENAME COLUMN `TransactionItemId` TO `TransactionDetailId`;
+Executed DbCommand (373ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `JournalDetails` RENAME COLUMN `TransactionItemId` TO `TransactionDetailId`;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `JournalDetails` RENAME INDEX `IX_JournalDetails_TransactionItemId` TO `IX_JournalDetails_TransactionDetailId`;
+Executed DbCommand (697ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `JournalDetails` RENAME INDEX `IX_JournalDetails_TransactionItemId` TO `IX_JournalDetails_TransactionDetailId`;
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (0ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `JournalDetails` ADD CONSTRAINT `FK_JournalDetails_TransactionDetails_TransactionDetailId` FOREIGN KEY (`TransactionDetailId`) REFERENCES `TransactionDetails` (`Id`) ON DELETE RESTRICT;
+Executed DbCommand (4,357ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `JournalDetails` ADD CONSTRAINT `FK_JournalDetails_TransactionDetails_TransactionDetailId` FOREIGN KEY (`TransactionDetailId`) REFERENCES `TransactionDetails` (`Id`) ON DELETE RESTRICT;

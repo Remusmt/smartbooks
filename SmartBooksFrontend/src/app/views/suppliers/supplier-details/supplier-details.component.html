@@ -1,0 +1,176 @@
+<div class="page-header" *ngIf="isMobile">
+  <a (click)="goBack()"
+      class="back-arrow">
+    <mat-icon>arrow_back</mat-icon>
+  </a>
+  <span class="current-page-title">Supplier Details</span>
+</div>
+<section class="details-container">
+  <mat-divider class="padding-bottom-10"></mat-divider>
+  <div class="container-header">
+    <span class="container-header-title" >
+      {{selectedSupplier.name}}
+    </span>
+    <span class="header-spacer"></span>
+    <button mat-raised-button
+            color="primary"
+            title="Add payment"
+            [matMenuTriggerFor]="paymentMenu">
+            Menu <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #paymentMenu="matMenu">
+      <button mat-menu-item (click)="onCreate()" *ngIf="!isMobile">
+        <mat-icon class="mat-icon-color">add_circle</mat-icon>
+        Add Supplier
+      </button>
+      <button mat-menu-item (click)="onCreateAddress()" *ngIf="!isMobile">
+        <mat-icon class="mat-icon-color">add_circle</mat-icon>
+        Add Address
+      </button>
+      <button mat-menu-item (click)="onEdit()" *ngIf="isMobile">
+        <mat-icon class="mat-icon-color">launch</mat-icon>
+        Edit
+      </button>
+      <button mat-menu-item [matMenuTriggerFor]="inventoryMenu">
+        <img src="/assets/icons/warehouse-icon.png" class="mat-icon notranslate material-icons">
+        Inventory
+      </button>
+      <button mat-menu-item [matMenuTriggerFor]="print">
+        <mat-icon class="mat-icon-color">print</mat-icon>
+        Print
+      </button>
+      <button mat-menu-item [matMenuTriggerFor]="excelMenu">
+        <img src="/assets/icons/excel-icon.png" class="mat-icon notranslate material-icons">
+        Excel
+      </button>
+    </mat-menu>
+
+    <mat-menu #inventoryMenu="matMenu">
+      <button mat-menu-item>Quick Add</button>
+      <button mat-menu-item>Quick Count</button>
+      <button mat-menu-item>Transfer Order</button>
+      <button mat-menu-item>Stock Take</button>
+    </mat-menu>
+
+    <mat-menu #print="matMenu">
+      <button mat-menu-item>List</button>
+      <button mat-menu-item>Inventory Movement</button>
+    </mat-menu>
+
+    <mat-menu #excelMenu="matMenu">
+      <button mat-menu-item>Import Items</button>
+      <button mat-menu-item>Export List</button>
+    </mat-menu>
+  </div>
+  <mat-divider class="padding-top-10"></mat-divider>
+
+  <mat-card class="rep-details">
+    <mat-card-content>
+      <mat-list role="list">
+        <mat-grid-list cols="2" rowHeight="60px">
+          <mat-grid-tile [colspan] = "2" class="less-thick">
+            <mat-list-item role="listitem"
+                         class="record-field-Item">
+            <span class="item-detail detail-caption">
+              Company Name
+            </span>
+            <span class="item-detail">
+              {{selectedSupplier.name}}
+            </span>
+          </mat-list-item>
+          </mat-grid-tile>
+          <mat-grid-tile [colspan] = "2" class="less-thick">
+            <mat-list-item role="listitem"
+                         class="record-field-Item">
+            <span class="item-detail detail-caption">
+              First Name
+            </span>
+            <span class="item-detail">
+              {{selectedSupplier.firstName}}
+            </span>
+          </mat-list-item>
+          </mat-grid-tile>
+          <mat-grid-tile [colspan] = "2" class="less-thick">
+            <mat-list-item role="listitem"
+                         class="record-field-Item">
+            <span class="item-detail detail-caption">
+              Last Name
+            </span>
+            <span class="item-detail">
+              {{selectedSupplier.lastName}}
+            </span>
+          </mat-list-item>
+          </mat-grid-tile>
+          <mat-grid-tile [colspan] = "2" class="less-thick">
+            <mat-list-item role="listitem"
+                         class="record-field-Item">
+            <span class="item-detail detail-caption">
+              Email
+            </span>
+            <span class="item-detail">
+              {{selectedSupplier.email}}
+            </span>
+            </mat-list-item>
+          </mat-grid-tile>
+          <mat-grid-tile class="less-thick">
+            <mat-list-item role="listitem"
+                         class="record-field-Item">
+            <span class="item-detail detail-caption">
+              Phone Number
+            </span>
+            <span class="item-detail">
+              {{selectedSupplier.phoneNumber}}
+            </span>
+            </mat-list-item>
+          </mat-grid-tile>
+          <mat-grid-tile class="less-thick">
+            <mat-list-item role="listitem"
+                         class="record-field-Item">
+            <span class="item-detail detail-caption">
+              ID Number
+            </span>
+            <span class="item-detail">
+              {{selectedSupplier.idNumber}}
+            </span>
+            </mat-list-item>
+          </mat-grid-tile>
+          <mat-grid-tile class="less-thick">
+            <mat-list-item role="listitem"
+                         class="record-field-Item">
+            <span class="item-detail detail-caption">
+              Balance
+            </span>
+            <span class="item-detail">
+              {{selectedSupplier.balance| number:'0.2-2'}}
+            </span>
+            </mat-list-item>
+          </mat-grid-tile>
+          <mat-grid-tile class="less-thick">
+            <mat-list-item role="listitem"
+                         class="record-field-Item">
+            <span class="item-detail detail-caption">
+              Currency Balance
+            </span>
+            <span class="item-detail">
+              {{selectedSupplier.currencyBalance| number:'0.2-2'}}
+            </span>
+            </mat-list-item>
+          </mat-grid-tile>
+
+
+        </mat-grid-list>
+      </mat-list>
+
+      <app-spinner></app-spinner>
+
+      <mat-tab-group role="tab">
+        <mat-tab label="Addresses"
+                 role="tabpanel">
+          <app-supplier-addresses-list></app-supplier-addresses-list>
+        </mat-tab>
+      </mat-tab-group>
+
+    </mat-card-content>
+  </mat-card>
+
+</section>

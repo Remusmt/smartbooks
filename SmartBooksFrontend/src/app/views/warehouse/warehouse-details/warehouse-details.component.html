@@ -1,0 +1,66 @@
+<section class="details-container">
+  <mat-divider class="padding-bottom-10"></mat-divider>
+  <div class="container-header">
+    <span class="container-header-title" *ngIf="!isMobile">
+      {{warehouse.code}} - {{warehouse.description}}
+    </span>
+    <mat-select
+      *ngIf="isMobile"
+      [(value)]="warehouse"
+      (selectionChange)="onSelectedValueChange($event)"
+      class="mobile-list-container container-header-title">
+      <mat-option
+        *ngFor="let item of warehouseService.dataSource | async"
+        [value] = "item">
+        {{item.description}}
+      </mat-option>
+    </mat-select>
+    <span class="header-spacer"></span>
+    <button mat-raised-button
+            color="primary"
+            title="Add payment"
+            [matMenuTriggerFor]="paymentMenu">
+            Add <mat-icon>home_work</mat-icon>
+    </button>
+    <mat-menu #paymentMenu="matMenu">
+      <button mat-menu-item (click)="onCreateWarehouse()">Warehouse</button>
+      <button mat-menu-item (click)="onCreateBin(warehouse.id)">Bin</button>
+    </mat-menu>
+  </div>
+  <mat-divider class="padding-top-10"></mat-divider>
+
+  <mat-card class="rep-details">
+    <mat-card-content>
+      <mat-list role="list">
+        <mat-list-item role="listitem"
+                       class="record-field-Item">
+          <span class="item-detail detail-caption">
+            Code
+          </span>
+          <span class="item-detail">
+            {{warehouse.code}}
+          </span>
+        </mat-list-item>
+        <mat-list-item role="listitem"
+                       class="record-field-Item">
+          <span class="item-detail detail-caption">
+            Description
+          </span>
+          <span class="item-detail">
+            {{warehouse.description}}
+          </span>
+        </mat-list-item>
+      </mat-list>
+
+      <app-spinner *ngIf="!warehouseService.wasFetched"></app-spinner>
+
+      <mat-tab-group role="tab">
+        <mat-tab label="Bins"
+                 role="tabpanel">
+          <app-bin-list></app-bin-list>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card-content>
+  </mat-card>
+
+</section>

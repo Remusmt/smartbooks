@@ -1,0 +1,33 @@
+﻿@model List<string>
+@{
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>List</title>
+        <style>
+            .no-border {
+                border: 1px solid #dddddd;
+                margin: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <p>Please find the below list of readers currently available.</p>
+        </div>
+        <div>
+            <table class="no-border">
+                <tr>
+                    <td>Description</td>
+                </tr>
+                @foreach (var item in @Model)
+                {
+                    <tr>
+                        <td>@item</td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </body>
+</html>
+}

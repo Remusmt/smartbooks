@@ -1,0 +1,92 @@
+
+<section class="list-container">
+
+  <mat-divider class="padding-bottom-10" *ngIf="isMobile"></mat-divider>
+  <div class="container-header" *ngIf="isMobile">
+    <span class="container-header-title" >
+      {{selectedSupplier.name}}
+    </span>
+    <span class="header-spacer"></span>
+    <button mat-raised-button
+            color="primary"
+            title="Add payment"
+            [matMenuTriggerFor]="paymentMenu">
+            Menu <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #paymentMenu="matMenu">
+      <button mat-menu-item (click)="onCreate()">
+        <mat-icon class="mat-icon-color">add_circle</mat-icon>
+        Add Supplier
+      </button>
+      <button mat-menu-item (click)="onCreateAddress()" *ngIf="!isMobile">
+        <mat-icon class="mat-icon-color">add_circle</mat-icon>
+        Add Address
+      </button>
+      <button mat-menu-item [matMenuTriggerFor]="inventoryMenu">
+        <img src="/assets/icons/warehouse-icon.png" class="mat-icon notranslate material-icons">
+        Inventory
+      </button>
+      <button mat-menu-item [matMenuTriggerFor]="print">
+        <mat-icon class="mat-icon-color">print</mat-icon>
+        Print
+      </button>
+      <button mat-menu-item [matMenuTriggerFor]="excelMenu">
+        <img src="/assets/icons/excel-icon.png" class="mat-icon notranslate material-icons">
+        Excel
+      </button>
+    </mat-menu>
+
+    <mat-menu #inventoryMenu="matMenu">
+      <button mat-menu-item>Quick Add</button>
+      <button mat-menu-item>Quick Count</button>
+      <button mat-menu-item>Transfer Order</button>
+      <button mat-menu-item>Stock Take</button>
+    </mat-menu>
+
+    <mat-menu #print="matMenu">
+      <button mat-menu-item>List</button>
+      <button mat-menu-item>Inventory Movement</button>
+    </mat-menu>
+
+    <mat-menu #excelMenu="matMenu">
+      <button mat-menu-item>Import Items</button>
+      <button mat-menu-item>Export List</button>
+    </mat-menu>
+  </div>
+  <mat-divider class="padding-top-10" *ngIf="isMobile"></mat-divider>
+
+  <div class="example-container mat-elevation-z8">
+    <div *ngIf="isMobile">
+      <app-spinner></app-spinner>
+    </div>
+      <mat-table [dataSource]="data" matSort matSortActive="name" matSortDisableClear matSortDirection="asc">
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.name}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="balance">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Balance</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{row.balance| number:'0.2-2'}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="actions">
+          <mat-header-cell *matHeaderCellDef class="th-right" ngClass="isMobile: 'w-115': 'w-75'"></mat-header-cell>
+          <mat-cell *matCellDef="let row" class="th-right" ngClass="isMobile: 'w-115': 'w-75'">
+            <button mat-icon-button (click)="onEdit(row)" title="Edit"><mat-icon>launch</mat-icon></button>
+            <button mat-icon-button color="warn" (click)="onDelete(row.id)"><mat-icon>delete_outline</mat-icon></button>
+            <button mat-icon-button (click)="onViewItem()" *ngIf="isMobile"><mat-icon>search</mat-icon></button>
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="noData">
+          <mat-footer-cell *matFooterCellDef colspan="3">
+            No data.
+          </mat-footer-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"
+                  (click) ="onRowClicked(row)"
+                  [ngClass]="{'highlightSelected':isSelectedRow(row.id)}"></mat-row>
+        <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(data!=null && data.length==0)}"></mat-footer-row>
+      </mat-table>
+    <mat-paginator [length]="resultsLength" [pageSize]="20"></mat-paginator>
+  </div>
+</section>

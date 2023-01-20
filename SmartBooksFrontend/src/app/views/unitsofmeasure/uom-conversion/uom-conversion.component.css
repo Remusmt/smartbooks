@@ -1,0 +1,58 @@
+
+.vertical-content-container {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: rgba(0,0,0,.12);
+}
+
+.step-page-header {
+  font: 400 14px/20px Roboto, "Helvetica Neue", sans-serif;
+}
+
+.action-container {
+  text-align: right;
+}
+
+.radio-group-container {
+  padding-top: 10px;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+}
+
+.radio-btn {
+  margin: 5px;
+}
+
+.nav-btn {
+  margin: 5px;
+}
+
+.step-form-container {
+  padding: 5px;
+  padding-top: 10px;
+}
+
+.factor-field {
+  max-width: 150px;
+  text-align: right;
+}
+
+.conversion-summary {
+  margin: 5px;
+  padding: 5px;
+}
+
+.summary-title {
+  font-weight: bold;
+  text-decoration: underline;
+  padding-bottom: 5px;
+}
+
+.conversion-description {
+  font-weight: bold;
+  text-decoration: underline;
+}

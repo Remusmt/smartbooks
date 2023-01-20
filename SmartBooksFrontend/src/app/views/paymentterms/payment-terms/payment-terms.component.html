@@ -1,0 +1,139 @@
+<mat-toolbar class="display-flex">
+  <span>{{service.form.controls['id'].value?"Edit Payment Terms":"New Payment Terms"}}</span>
+  <span class="fill-remaining-space"></span>
+  <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabIndex="-1"><mat-icon>clear</mat-icon></button>
+</mat-toolbar>
+<mat-divider class="padding-top-10"></mat-divider>
+
+<form [formGroup] = 'service.form'
+(ngSubmit) = 'onSubmit()'>
+<mat-card class="register-card">
+  <mat-dialog-content>
+  <mat-card-content>
+    <mat-grid-list cols="2" rowHeight="60px">
+      <mat-grid-tile [colspan]= "2">
+        <mat-form-field class="full-width-field">
+          <mat-label class="mat-label">Description</mat-label>
+          <input matInput
+                type="text"
+                name="description"
+                formControlName="description"
+                required/>
+            <mat-error *ngIf="service.form.controls.description.errors?.required">
+              Description is required
+            </mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]= "2">
+        <mat-radio-group
+          aria-labelledby="radio-group-label"
+          class="radio-group"
+          [value] = "dateDriven">
+          <mat-radio-button class="radio-button"
+          [value] = false
+          (change)=termsBaseChanged()>
+            Net Based
+          </mat-radio-button>
+          <mat-radio-button class="radio-button"
+          [value] = true
+          (change)=termsBaseChanged()>
+            Date Based
+          </mat-radio-button>
+        </mat-radio-group>
+      </mat-grid-tile>
+
+
+      <div *ngIf="saving">
+        <app-spinner></app-spinner>
+      </div>
+
+      <div *ngIf="!dateDriven">
+        <mat-grid-tile [colspan]= "2">
+          <mat-form-field class="full-width-field">
+            <mat-label class="mat-label">Net Days</mat-label>
+            <input matInput
+                  type="number"
+                  name="netDueIn"
+                  formControlName="netDueIn"/>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field class="full-width-field">
+            <mat-label class="mat-label">Discount %</mat-label>
+            <input matInput
+                  type="number"
+                  name="discountPercentage"
+                  formControlName="discountPercentage"/>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field class="full-width-field">
+            <mat-label class="mat-label">Discount Days</mat-label>
+            <input matInput
+                  type="number"
+                  name="discountIfPaidWithin"
+                  formControlName="discountIfPaidWithin"/>
+          </mat-form-field>
+        </mat-grid-tile>
+      </div>
+
+      <div *ngIf="dateDriven">
+        <mat-grid-tile>
+          <mat-form-field class="full-width-field">
+            <mat-label class="mat-label">Due Date</mat-label>
+            <input matInput
+                  type="number"
+                  name="netDueBefore"
+                  formControlName="netDueBefore"/>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field class="full-width-field">
+            <mat-label class="mat-label">Next month if within</mat-label>
+            <input matInput
+                  type="number"
+                  name="dueNextMonthIfIssued"
+                  formControlName="dueNextMonthIfIssued"/>
+                  <span matSuffix>days</span>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field class="full-width-field">
+            <mat-label class="mat-label">Discount %</mat-label>
+            <input matInput
+                  type="number"
+                  name="discountPercentage"
+                  formControlName="discountPercentage"/>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field class="full-width-field">
+            <mat-label class="mat-label">Discount Date</mat-label>
+            <input matInput
+                  type="number"
+                  name="discountIfPaidBefore"
+                  formControlName="discountIfPaidBefore"/>
+          </mat-form-field>
+        </mat-grid-tile>
+      </div>
+
+  </mat-grid-list>
+  </mat-card-content>
+</mat-dialog-content>
+  <mat-card-actions class="form-actions">
+    <button mat-raised-button
+            type="button"
+            (click)="onClose()"
+            class="btn-form-actions btn-form-actions-cancel">
+            Cancel
+    </button>
+
+    <button mat-raised-button
+            type="submit"
+            class="btn-form-actions"
+            color = 'primary'>
+            Save
+    </button>
+  </mat-card-actions>
+</mat-card>
+</form>

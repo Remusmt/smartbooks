@@ -1,0 +1,188 @@
+[
+  {
+    "GroupName": "Inventory",
+    "SystemModule": "Inventory",
+    "Icon": "warehouse-icon.png",
+    "ImageIcon": "true",
+    "Menus": [
+      {
+        "Description": "Inventory",
+        "SystemType": "Inventory Items",
+        "LinkUrl": "/app/inventory",
+        "Icon": "warehouse-icon.png",
+        "ImageIcon": "true",
+        "CompanyTypes": [
+          1,2
+        ]
+      },
+      {
+        "Description": "Warehouses",
+        "SystemType": "Warehouses",
+        "LinkUrl": "/app/warehouses",
+        "Icon": "home_work"
+      },
+      {
+        "Description": "Categories",
+        "SystemType": "Inventory Category",
+        "LinkUrl": "/app/inventorycategories",
+        "Icon": "category"
+      },
+      {
+        "Description": "Units of Measure",
+        "SystemType": "Units of Measure",
+        "LinkUrl": "/app/uoms",
+        "Icon": "square_foot"
+      }
+    ]
+  },
+  {
+    "GroupName": "Sales",
+    "SystemModule": "Sales",
+    "Icon": "receipt",
+    "Menus": [
+      {
+        "Description": "Sales Center",
+        "SystemType": "Customers",
+        "LinkUrl": "/app/sales",
+        "Icon": "shop"
+      },
+      {
+        "Description": "Customer Types",
+        "SystemType": "Customer Types",
+        "LinkUrl": "/app/customertypes",
+        "Icon": "supervisor_account"
+      },
+      {
+        "Description": "Payment Terms",
+        "SystemType": "Payment Terms",
+        "LinkUrl": "/app/paymentTerms",
+        "Icon": ""
+      }
+    ]
+  },
+  {
+    "GroupName": "Purchases",
+    "SystemModule": "Purchases",
+    "Icon": "shopping_basket",
+    "Menus": [
+      {
+        "Description": "Purchases Center",
+        "SystemType": "Suppliers",
+        "LinkUrl": "/app/purchases",
+        "Icon": "payment"
+      },
+      {
+        "Description": "Supplier Types",
+        "SystemType": "Supplier Types",
+        "LinkUrl": "/app/suppliertypes",
+        "Icon": "people_outline"
+      }
+    ]
+  },
+  {
+    "GroupName": "Accounts",
+    "SystemModule": "Accounts",
+    "Icon": "local_atm",
+    "Menus": [
+      {
+        "Description": "Charts of Account",
+        "SystemType": "ChartsofAccount",
+        "LinkUrl": "/app/chartsofaccount",
+        "Icon": "format_align_left"
+      },
+      {
+        "Description": "CostCenters",
+        "SystemType": "CostCenters",
+        "LinkUrl": "/app/costcenters",
+        "Icon": "dynamic_feed"
+      },
+      {
+        "Description": "Taxes",
+        "SystemType": "Taxes",
+        "LinkUrl": "/app/taxes",
+        "Icon": "money_off"
+      }
+    ]
+  },
+  {
+    "GroupName": "General Setup",
+    "SystemModule": "Accounts",
+    "Icon": "settings_applications",
+    "Menus": [
+      {
+        "Description": "Payment Terms",
+        "SystemType": "PaymentTerms",
+        "LinkUrl": "/app/paymentterms",
+        "Icon": "redeem"
+      }
+    ]
+  },
+  {
+    "GroupName": "School Setup",
+    "SystemModule": "School",
+    "Icon": "import_contacts",
+    "Menus": [
+      {
+        "Description": "School Years",
+        "SystemType": "School Years",
+        "LinkUrl": "/app/schoolyears",
+        "Icon": "event"
+      },
+      {
+        "Description": "School Terms",
+        "SystemType": "School Terms",
+        "LinkUrl": "/app/schoolterms",
+        "Icon": "date_range"
+      },
+      {
+        "Description": "Levels",
+        "SystemType": "Levels",
+        "LinkUrl": "/app/levels",
+        "Icon": "view_agenda"
+      },
+      {
+        "Description": "Blocks",
+        "SystemType": "Blocks",
+        "LinkUrl": "/app/blocks",
+        "Icon": "view_column"
+      },
+      {
+        "Description": "Class Rooms",
+        "SystemType": "Class Rooms",
+        "LinkUrl": "/app/classrooms",
+        "Icon": "view_column"
+      },
+      {
+        "Description": "Utility Rooms",
+        "SystemType": "Utility Rooms",
+        "LinkUrl": "/app/utilityrooms",
+        "Icon": "view_column"
+      },
+      {
+        "Description": "Dormitory",
+        "SystemType": "Dormitory",
+        "LinkUrl": "/app/dormitory",
+        "Icon": "view_column"
+      },
+      {
+        "Description": "Teachers",
+        "SystemType": "Teachers",
+        "LinkUrl": "/app/teachers",
+        "Icon": "view_agenda"
+      },
+      {
+        "Description": "Subjects",
+        "SystemType": "Subjects",
+        "LinkUrl": "/app/subjects",
+        "Icon": "view_agenda"
+      },
+      {
+        "Description": "Students",
+        "SystemType": "Students",
+        "LinkUrl": "/app/students",
+        "Icon": "view_agenda"
+      }
+    ]
+  }
+]
+
