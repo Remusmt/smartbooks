@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "H:\\repos\\Witsoft\\SmartBooks\\SmartBooks.Domains\\SmartBooks.Domains.csproj": {}
+    "D:\\Repos\\SmartBooks\\SmartBooks.Domains\\SmartBooks.Domains.csproj": {}
   },
   "projects": {
-    "H:\\repos\\Witsoft\\SmartBooks\\SmartBooks.Domains\\SmartBooks.Domains.csproj": {
+    "D:\\Repos\\SmartBooks\\SmartBooks.Domains\\SmartBooks.Domains.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\repos\\Witsoft\\SmartBooks\\SmartBooks.Domains\\SmartBooks.Domains.csproj",
+        "projectUniqueName": "D:\\Repos\\SmartBooks\\SmartBooks.Domains\\SmartBooks.Domains.csproj",
         "projectName": "SmartBooks.Domains",
-        "projectPath": "H:\\repos\\Witsoft\\SmartBooks\\SmartBooks.Domains\\SmartBooks.Domains.csproj",
+        "projectPath": "D:\\Repos\\SmartBooks\\SmartBooks.Domains\\SmartBooks.Domains.csproj",
         "packagesPath": "C:\\Users\\remus\\.nuget\\packages\\",
-        "outputPath": "H:\\repos\\Witsoft\\SmartBooks\\SmartBooks.Domains\\obj\\",
+        "outputPath": "D:\\Repos\\SmartBooks\\SmartBooks.Domains\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages",
@@ -24,7 +24,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netstandard2.1"
+          "net5.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\System\\Components\\Packages": {},
@@ -33,8 +33,8 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netstandard2.1": {
-            "targetAlias": "netstandard2.1",
+          "net5.0": {
+            "targetAlias": "net5.0",
             "projectReferences": {}
           }
         },
@@ -45,8 +45,8 @@
         }
       },
       "frameworks": {
-        "netstandard2.1": {
-          "targetAlias": "netstandard2.1",
+        "net5.0": {
+          "targetAlias": "net5.0",
           "dependencies": {
             "Microsoft.Extensions.Identity.Stores": {
               "target": "Package",
@@ -59,16 +59,17 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "NETStandard.Library": {
+            "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

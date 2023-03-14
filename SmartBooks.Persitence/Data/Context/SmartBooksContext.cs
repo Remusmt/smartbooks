@@ -14,20 +14,20 @@ namespace SmartBooks.Persitence.Data.Context
 {
     public class SmartBooksContextFactory : IDesignTimeDbContextFactory<SmartBooksContext>
     {
-        //public SmartBooksContext CreateDbContext(string[] args)
-        //{
-        //    var optionsBuilder = new DbContextOptionsBuilder<SmartBooksContext>();
-        //    optionsBuilder.UseSqlServer("Server=DESKTOP-LPOGMEO\\SQLEXPRESS01;Database=SmartBooksContextDb;Trusted_Connection=True;MultipleActiveResultSets=true");
-        //    return new SmartBooksContext(optionsBuilder.Options);
-        //}
-
         public SmartBooksContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<SmartBooksContext>();
-            string strConn = "server=localhost;database=smartbookscontextdb;user=root;password=N33m@1118;port=3307";
-            optionsBuilder.UseMySql(strConn, ServerVersion.AutoDetect(strConn));
+            optionsBuilder.UseSqlServer("Server=REMUS_PC;Database=SmartBooksContextDb;Trusted_Connection=True;MultipleActiveResultSets=true");
             return new SmartBooksContext(optionsBuilder.Options);
         }
+
+        //public SmartBooksContext CreateDbContext(string[] args)
+        //{
+        //    var optionsBuilder = new DbContextOptionsBuilder<SmartBooksContext>();
+        //    string strConn = "server=localhost;database=smartbookscontextdb;user=root;password=N33m@1118;port=3307";
+        //    optionsBuilder.UseMySql(strConn, ServerVersion.AutoDetect(strConn));
+        //    return new SmartBooksContext(optionsBuilder.Options);
+        //}
     }
     public class SmartBooksContext : DbContext
     {
@@ -139,7 +139,7 @@ namespace SmartBooks.Persitence.Data.Context
         public DbSet<SaccoFee> SaccoFees { get; set; }
         public DbSet<SavingsItem> SavingsItems { get; set; }
         public DbSet<SharesItem> SharesItems { get; set; }
-        public DbSet<LoanProduct> LoanProducts { get; set; }
+        //public DbSet<LoanProduct> LoanProducts { get; set; }
         public DbSet<MemberAccount> MemberAccounts { get; set; }
 
         //Source Documents

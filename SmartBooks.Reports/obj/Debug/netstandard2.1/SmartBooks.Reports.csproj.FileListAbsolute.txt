@@ -10,3 +10,16 @@ E:\repos\Witsoft\SmartBooks\SmartBooks.Reports\obj\Debug\netstandard2.1\SmartBoo
 E:\repos\Witsoft\SmartBooks\SmartBooks.Reports\obj\Debug\netstandard2.1\SmartBooks.Reports.csproj.CopyComplete
 E:\repos\Witsoft\SmartBooks\SmartBooks.Reports\obj\Debug\netstandard2.1\SmartBooks.Reports.dll
 E:\repos\Witsoft\SmartBooks\SmartBooks.Reports\obj\Debug\netstandard2.1\SmartBooks.Reports.pdb
+D:\Repos\SmartBooks\SmartBooks.Reports\bin\Debug\netstandard2.1\SmartBooks.Reports.deps.json
+D:\Repos\SmartBooks\SmartBooks.Reports\bin\Debug\netstandard2.1\SmartBooks.Reports.dll
+D:\Repos\SmartBooks\SmartBooks.Reports\bin\Debug\netstandard2.1\SmartBooks.Reports.pdb
+D:\Repos\SmartBooks\SmartBooks.Reports\bin\Debug\netstandard2.1\SmartBooks.Domains.dll
+D:\Repos\SmartBooks\SmartBooks.Reports\bin\Debug\netstandard2.1\SmartBooks.Domains.pdb
+D:\Repos\SmartBooks\SmartBooks.Reports\obj\Debug\netstandard2.1\SmartBooks.Reports.csproj.AssemblyReference.cache
+D:\Repos\SmartBooks\SmartBooks.Reports\obj\Debug\netstandard2.1\SmartBooks.Reports.GeneratedMSBuildEditorConfig.editorconfig
+D:\Repos\SmartBooks\SmartBooks.Reports\obj\Debug\netstandard2.1\SmartBooks.Reports.AssemblyInfoInputs.cache
+D:\Repos\SmartBooks\SmartBooks.Reports\obj\Debug\netstandard2.1\SmartBooks.Reports.AssemblyInfo.cs
+D:\Repos\SmartBooks\SmartBooks.Reports\obj\Debug\netstandard2.1\SmartBooks.Reports.csproj.CoreCompileInputs.cache
+D:\Repos\SmartBooks\SmartBooks.Reports\obj\Debug\netstandard2.1\SmartBooks.Reports.csproj.CopyComplete
+D:\Repos\SmartBooks\SmartBooks.Reports\obj\Debug\netstandard2.1\SmartBooks.Reports.dll
+D:\Repos\SmartBooks\SmartBooks.Reports\obj\Debug\netstandard2.1\SmartBooks.Reports.pdb

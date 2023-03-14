@@ -7,12 +7,12 @@ namespace SmartBooks.Domains.SaccoEntities
     /// </summary>
     public class LoanProduct: SaccoProduct
     {
-        public int PenaltyAccountId { get; set; }
+        //public int PenaltyAccountId { get; set; }
 
         /// <summary>
         /// Income account for posting to general ledger penaties from this loan
         /// </summary>
-        public LedgerAccount PenaltyAccount { get; set; }
+        //public LedgerAccount PenaltyAccount { get; set; }
 
     }
 }

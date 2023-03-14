@@ -7,3 +7,13 @@ E:\repos\Witsoft\SmartBooks\SmartBooks.Domains\obj\Debug\netstandard2.1\SmartBoo
 E:\repos\Witsoft\SmartBooks\SmartBooks.Domains\obj\Debug\netstandard2.1\SmartBooks.Domains.dll
 E:\repos\Witsoft\SmartBooks\SmartBooks.Domains\obj\Debug\netstandard2.1\SmartBooks.Domains.pdb
 E:\repos\Witsoft\SmartBooks\SmartBooks.Domains\obj\Debug\netstandard2.1\SmartBooks.Domains.csprojAssemblyReference.cache
+D:\Repos\SmartBooks\SmartBooks.Domains\bin\Debug\netstandard2.1\SmartBooks.Domains.deps.json
+D:\Repos\SmartBooks\SmartBooks.Domains\bin\Debug\netstandard2.1\SmartBooks.Domains.dll
+D:\Repos\SmartBooks\SmartBooks.Domains\bin\Debug\netstandard2.1\SmartBooks.Domains.pdb
+D:\Repos\SmartBooks\SmartBooks.Domains\obj\Debug\netstandard2.1\SmartBooks.Domains.csproj.AssemblyReference.cache
+D:\Repos\SmartBooks\SmartBooks.Domains\obj\Debug\netstandard2.1\SmartBooks.Domains.GeneratedMSBuildEditorConfig.editorconfig
+D:\Repos\SmartBooks\SmartBooks.Domains\obj\Debug\netstandard2.1\SmartBooks.Domains.AssemblyInfoInputs.cache
+D:\Repos\SmartBooks\SmartBooks.Domains\obj\Debug\netstandard2.1\SmartBooks.Domains.AssemblyInfo.cs
+D:\Repos\SmartBooks\SmartBooks.Domains\obj\Debug\netstandard2.1\SmartBooks.Domains.csproj.CoreCompileInputs.cache
+D:\Repos\SmartBooks\SmartBooks.Domains\obj\Debug\netstandard2.1\SmartBooks.Domains.dll
+D:\Repos\SmartBooks\SmartBooks.Domains\obj\Debug\netstandard2.1\SmartBooks.Domains.pdb

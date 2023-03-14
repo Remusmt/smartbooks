@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KnnWcWtJLrvI2QOfQf97ONfC804ATnvVjoG+rsaYP7TbdLJUoiBdxbV3dK7oUVO4r0Kt1p4gGHr4810D5qK7YA==",
+  "dgSpecHash": "k6IYRs8U8UruGCEi9B/wTm7bncpKCs6U9BbA3UN5MJPVN+9+8BUXKrKNoqTYj6hB+EVKXUdNs2zo48K432FfcQ==",
   "success": true,
-  "projectFilePath": "H:\\repos\\Witsoft\\SmartBooks\\SmartBooks.Reports\\SmartBooks.Reports.csproj",
+  "projectFilePath": "D:\\Repos\\SmartBooks\\SmartBooks.Reports\\SmartBooks.Reports.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\remus\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.2\\microsoft.aspnetcore.cryptography.internal.5.0.2.nupkg.sha512",
     "C:\\Users\\remus\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\5.0.2\\microsoft.aspnetcore.cryptography.keyderivation.5.0.2.nupkg.sha512",
@@ -14,13 +14,7 @@
     "C:\\Users\\remus\\.nuget\\packages\\microsoft.extensions.logging\\5.0.0\\microsoft.extensions.logging.5.0.0.nupkg.sha512",
     "C:\\Users\\remus\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\remus\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",
-    "C:\\Users\\remus\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
-    "C:\\Users\\remus\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
-    "C:\\Users\\remus\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
-    "C:\\Users\\remus\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.0\\system.diagnostics.diagnosticsource.5.0.0.nupkg.sha512",
-    "C:\\Users\\remus\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
-    "C:\\Users\\remus\\.nuget\\packages\\system.numerics.vectors\\4.4.0\\system.numerics.vectors.4.4.0.nupkg.sha512",
-    "C:\\Users\\remus\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
+    "C:\\Users\\remus\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }

@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SmartBooks.Persitence.Data.Context;
 
@@ -14,20 +15,22 @@ namespace SmartBooks.Persitence.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("Relational:MaxIdentifierLength", 64)
+                .UseIdentityColumns()
+                .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.2");
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<int>", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<string>("ClaimType")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ClaimValue")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("UserId")
                         .HasColumnType("int");
@@ -41,35 +44,36 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<string>("City")
                         .HasMaxLength(50)
-                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<int?>("CountryId")
                         .HasColumnType("int");
 
                     b.Property<string>("Discriminator")
                         .IsRequired()
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<string>("Location")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PoBox")
                         .HasMaxLength(50)
-                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("PostalCode")
                         .HasMaxLength(50)
-                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("UpdateCode")
                         .HasColumnType("int");
@@ -87,7 +91,8 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
@@ -96,47 +101,47 @@ namespace SmartBooks.Persitence.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("ConcurrencyStamp")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("EmailConfirmed")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<string>("FullName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<bool>("LockoutEnabled")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<DateTimeOffset?>("LockoutEnd")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<string>("NormalizedEmail")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NormalizedUserName")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PasswordHash")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhoneNumber")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("PhoneNumberConfirmed")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<string>("SecurityStamp")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("TwoFactorEnabled")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<string>("UserName")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("UserType")
                         .HasColumnType("int");
@@ -150,50 +155,51 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<int>("CompanyId")
                         .HasColumnType("int");
 
                     b.Property<string>("ContentDisposition")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ContentType")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("CreatedBy")
                         .HasColumnType("int");
 
                     b.Property<string>("CreatedByName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<DateTimeOffset>("CreatedOn")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<string>("Extension")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FileName")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<long>("Length")
                         .HasColumnType("bigint");
 
                     b.Property<string>("Name")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RootPath")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SystemFileName")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("UpdateCode")
                         .HasColumnType("int");
@@ -207,7 +213,8 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<int>("ActionType")
                         .HasColumnType("int");
@@ -220,13 +227,13 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("CreatedByName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<DateTimeOffset>("CreatedOn")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("LogType")
                         .HasColumnType("int");
@@ -238,10 +245,10 @@ namespace SmartBooks.Persitence.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("SerializedRecord")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("UpdateCode")
                         .HasColumnType("int");
@@ -255,24 +262,25 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<string>("BankCode")
                         .HasMaxLength(50)
-                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("BankName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<int>("CountryId")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("UpdateCode")
                         .HasColumnType("int");
@@ -288,28 +296,29 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<int>("BankId")
                         .HasColumnType("int");
 
                     b.Property<string>("BranchCode")
                         .HasMaxLength(50)
-                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("BranchName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<string>("SwiftCode")
                         .HasMaxLength(50)
-                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("UpdateCode")
                         .HasColumnType("int");
@@ -325,11 +334,12 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<string>("Code")
                         .HasMaxLength(50)
-                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<int>("CompanyId")
                         .HasColumnType("int");
@@ -339,20 +349,20 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("CreatedByName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<DateTimeOffset>("CreatedOn")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<string>("Description")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("UpdateCode")
                         .HasColumnType("int");
@@ -371,7 +381,8 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<decimal>("Balance")
                         .HasPrecision(18, 6)
@@ -388,19 +399,19 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("CreatedByName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<DateTimeOffset>("CreatedOn")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<int>("InventoryItemId")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("UpdateCode")
                         .HasColumnType("int");
@@ -418,11 +429,12 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<string>("Code")
                         .HasMaxLength(50)
-                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<int>("CompanyId")
                         .HasColumnType("int");
@@ -432,24 +444,24 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("CreatedByName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<DateTimeOffset>("CreatedOn")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<string>("Description")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<string>("Discriminator")
                         .IsRequired()
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("UpdateCode")
                         .HasColumnType("int");
@@ -465,11 +477,12 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<string>("CompanyName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<int>("CompanyType")
                         .HasColumnType("int");
@@ -478,32 +491,32 @@ namespace SmartBooks.Persitence.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTimeOffset>("CreatedOn")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<int>("CurrencyId")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<string>("PoBox")
                         .HasMaxLength(50)
-                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("PostalCode")
                         .HasMaxLength(50)
-                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("RegistrationNumber")
                         .HasMaxLength(50)
-                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<string>("Town")
                         .HasMaxLength(50)
-                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<int>("UpdateCode")
                         .HasColumnType("int");
@@ -521,10 +534,11 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<bool>("AllowPostingToParentAccount")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("CompanyId")
                         .HasColumnType("int");
@@ -534,10 +548,10 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("CreatedByName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<DateTimeOffset>("CreatedOn")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<int>("CurrentFinancialYear")
                         .HasColumnType("int");
@@ -552,25 +566,25 @@ namespace SmartBooks.Persitence.Migrations
                         .HasColumnType("int");
 
                     b.Property<bool>("EnableInventoryTracking")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<bool>("HasMultipleWarehouses")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("UpdateCode")
                         .HasColumnType("int");
 
                     b.Property<bool>("UseAccountNumbers")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<bool>("UseFinancialYear")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.HasKey("Id");
 
@@ -581,20 +595,21 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<int?>("CurrencyId")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .HasMaxLength(50)
-                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("UpdateCode")
                         .HasColumnType("int");
@@ -610,24 +625,25 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<int>("CountryId")
                         .HasColumnType("int");
 
                     b.Property<string>("DecimalMark")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ISOCode")
                         .HasMaxLength(50)
-                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<int>("NumericCode")
                         .HasColumnType("int");
@@ -636,22 +652,22 @@ namespace SmartBooks.Persitence.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("SubUnit")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("SubUnitToUnit")
                         .HasColumnType("int");
 
                     b.Property<string>("Symbol")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("SymbolFirst")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<string>("ThousandSeparator")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("UpdateCode")
                         .HasColumnType("int");
@@ -667,7 +683,8 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<int>("CompanyId")
                         .HasColumnType("int");
@@ -677,23 +694,23 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("CreatedByName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<DateTimeOffset>("CreatedOn")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<int>("CurrencyId")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<decimal>("Rate")
                         .HasPrecision(18, 6)
                         .HasColumnType("decimal(18,6)");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("UpdateCode")
                         .HasColumnType("int");
@@ -709,7 +726,8 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<int>("CompanyId")
                         .HasColumnType("int");
@@ -719,23 +737,23 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("CreatedByName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<DateTimeOffset>("CreatedOn")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<int>("CustomerId")
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("UpdateCode")
                         .HasColumnType("int");
@@ -751,10 +769,11 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<bool>("AutoGenerateReference")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("CompanyId")
                         .HasColumnType("int");
@@ -764,55 +783,55 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("CreatedByName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<DateTimeOffset>("CreatedOn")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<string>("DocumentType")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<string>("LevelOneTitle")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LevelThreeTitle")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LevelTwoTitle")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("NextReferenceNo")
                         .HasColumnType("int");
 
                     b.Property<bool>("PrintLevelOne")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<bool>("PrintLevelThree")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<bool>("PrintLevelTwo")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("ReferenceLength")
                         .HasColumnType("int");
 
                     b.Property<string>("ReferencePrefix")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("RequireLevelOne")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<bool>("RequireLevelThree")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<bool>("RequireLevelTwo")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("UpdateCode")
                         .HasColumnType("int");
@@ -826,10 +845,11 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<bool>("Closed")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int?>("ClosingJournalId")
                         .HasColumnType("int");
@@ -842,31 +862,31 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("CreatedByName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<DateTimeOffset>("CreatedOn")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<DateTime>("EndDate")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime2");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int?>("OpeningJournalId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("StartDate")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime2");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("UpdateCode")
                         .HasColumnType("int");
 
                     b.Property<string>("YearTitle")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -881,7 +901,8 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<decimal>("Amount")
                         .HasPrecision(18, 6)
@@ -895,13 +916,13 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("CreatedByName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<DateTimeOffset>("CreatedOn")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("JournalDetailId")
                         .HasColumnType("int");
@@ -913,10 +934,10 @@ namespace SmartBooks.Persitence.Migrations
                         .HasColumnType("int");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<DateTime>("TransactionDate")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime2");
 
                     b.Property<int?>("TransactionDetailId")
                         .HasColumnType("int");
@@ -941,7 +962,8 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<decimal>("Balance")
                         .HasPrecision(18, 6)
@@ -973,13 +995,13 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("CreatedByName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<DateTimeOffset>("CreatedOn")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<decimal>("NewCost")
                         .HasPrecision(18, 6)
@@ -994,16 +1016,16 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("SourceDocumentReference")
                         .HasMaxLength(50)
-                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<byte>("SourceDocumentType")
-                        .HasColumnType("tinyint unsigned");
+                        .HasColumnType("tinyint");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<DateTime>("TransactionDate")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("TransactionType")
                         .HasColumnType("int");
@@ -1029,7 +1051,8 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<int>("CompanyId")
                         .HasColumnType("int");
@@ -1039,10 +1062,10 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("CreatedByName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<DateTimeOffset>("CreatedOn")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<decimal>("CreditSubTotal")
                         .HasPrecision(18, 6)
@@ -1076,19 +1099,19 @@ namespace SmartBooks.Persitence.Migrations
                         .HasColumnType("decimal(18,6)");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<string>("Memo")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ReferenceNumber")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<DateTime>("TransactionDate")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime2");
 
                     b.Property<int?>("TransactionId")
                         .HasColumnType("int");
@@ -1111,7 +1134,8 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<int?>("BusinessUnitId")
                         .HasColumnType("int");
@@ -1127,10 +1151,10 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("CreatedByName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<DateTimeOffset>("CreatedOn")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<decimal>("Credit")
                         .HasPrecision(18, 6)
@@ -1141,7 +1165,7 @@ namespace SmartBooks.Persitence.Migrations
                         .HasColumnType("decimal(18,6)");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("JournalId")
                         .HasColumnType("int");
@@ -1150,7 +1174,7 @@ namespace SmartBooks.Persitence.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Memo")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Sequence")
                         .HasColumnType("int");
@@ -1159,7 +1183,7 @@ namespace SmartBooks.Persitence.Migrations
                         .HasColumnType("int");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<decimal>("TaxAmount")
                         .HasPrecision(18, 6)
@@ -1202,21 +1226,22 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<string>("AccountName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<string>("AccountNumber")
                         .HasMaxLength(50)
-                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<int>("AccountType")
                         .HasColumnType("int");
 
                     b.Property<bool>("AddToDashboard")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<decimal>("Balance")
                         .HasPrecision(18, 6)
@@ -1224,7 +1249,7 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("BankAccountNo")
                         .HasMaxLength(50)
-                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<int>("CompanyId")
                         .HasColumnType("int");
@@ -1234,10 +1259,10 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("CreatedByName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<DateTimeOffset>("CreatedOn")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<decimal>("CurrencyBalance")
                         .HasPrecision(18, 6)
@@ -1247,19 +1272,19 @@ namespace SmartBooks.Persitence.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("DetailAccountType")
                         .HasColumnType("int");
 
                     b.Property<bool>("HasOverDraft")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<byte>("Height")
-                        .HasColumnType("tinyint unsigned");
+                        .HasColumnType("tinyint");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<decimal>("OverDraftLimit")
                         .HasPrecision(18, 6)
@@ -1269,10 +1294,10 @@ namespace SmartBooks.Persitence.Migrations
                         .HasColumnType("int");
 
                     b.Property<bool>("ShowInPettyCash")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int?>("TaxRateId")
                         .HasColumnType("int");
@@ -1295,7 +1320,8 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<decimal>("Amount")
                         .HasPrecision(18, 6)
@@ -1309,10 +1335,10 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("CreatedByName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<DateTimeOffset>("CreatedOn")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<int>("CreditAccountId")
                         .HasColumnType("int");
@@ -1321,7 +1347,7 @@ namespace SmartBooks.Persitence.Migrations
                         .HasColumnType("int");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("JournalDetailId")
                         .HasColumnType("int");
@@ -1330,13 +1356,13 @@ namespace SmartBooks.Persitence.Migrations
                         .HasColumnType("int");
 
                     b.Property<bool>("Posted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<DateTime>("TransactionDate")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("UpdateCode")
                         .HasColumnType("int");
@@ -1358,7 +1384,8 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<int>("CompanyId")
                         .HasColumnType("int");
@@ -1368,16 +1395,16 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("CreatedByName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<DateTimeOffset>("CreatedOn")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<string>("Description")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("LedgerAccountId")
                         .HasColumnType("int");
@@ -1386,7 +1413,7 @@ namespace SmartBooks.Persitence.Migrations
                         .HasColumnType("int");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("UpdateCode")
                         .HasColumnType("int");
@@ -1402,7 +1429,8 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<int>("CompanyId")
                         .HasColumnType("int");
@@ -1412,17 +1440,17 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("CreatedByName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<DateTimeOffset>("CreatedOn")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<bool>("DateDriven")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<string>("Description")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<int>("DiscountIfPaidBefore")
                         .HasColumnType("int");
@@ -1438,7 +1466,7 @@ namespace SmartBooks.Persitence.Migrations
                         .HasColumnType("int");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("NetDueBefore")
                         .HasColumnType("int");
@@ -1447,7 +1475,7 @@ namespace SmartBooks.Persitence.Migrations
                         .HasColumnType("int");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("UpdateCode")
                         .HasColumnType("int");
@@ -1461,7 +1489,8 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<int?>("BinId")
                         .HasColumnType("int");
@@ -1474,19 +1503,19 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("CreatedByName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<DateTimeOffset>("CreatedOn")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<bool>("GlobalBased")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("InventoryItemId")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<decimal>("ReorderPoint")
                         .HasPrecision(18, 6)
@@ -1497,7 +1526,7 @@ namespace SmartBooks.Persitence.Migrations
                         .HasColumnType("decimal(18,6)");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("UnitofMeasureId")
                         .HasColumnType("int");
@@ -1525,19 +1554,20 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<int>("CompanyId")
                         .HasColumnType("int");
 
                     b.Property<string>("ConcurrencyStamp")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NormalizedName")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -1548,13 +1578,14 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<string>("ClaimType")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ClaimValue")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("CompanyId")
                         .HasColumnType("int");
@@ -1571,7 +1602,8 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<decimal>("Balance")
                         .HasPrecision(18, 6)
@@ -1585,10 +1617,10 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("CreatedByName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<DateTimeOffset>("CreatedOn")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<decimal>("CurrencyBalance")
                         .HasPrecision(18, 6)
@@ -1599,47 +1631,47 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("Discriminator")
                         .IsRequired()
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<string>("FirstName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<string>("IdNumber")
                         .HasMaxLength(50)
-                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<string>("LastName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<int?>("LedgerAccountId")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<string>("PIN")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhoneNumber")
                         .HasMaxLength(50)
-                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("ReferenceNumber")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("UpdateCode")
                         .HasColumnType("int");
@@ -1659,11 +1691,12 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<string>("Code")
                         .HasMaxLength(50)
-                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<int>("CompanyId")
                         .HasColumnType("int");
@@ -1673,17 +1706,17 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("CreatedByName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<DateTimeOffset>("CreatedOn")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<string>("Description")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int?>("PurchasesAccountId")
                         .HasColumnType("int");
@@ -1695,13 +1728,13 @@ namespace SmartBooks.Persitence.Migrations
                         .HasColumnType("int");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("TaxAgencyId")
                         .HasColumnType("int");
 
                     b.Property<string>("TaxRegistrationNumber")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("UpdateCode")
                         .HasColumnType("int");
@@ -1721,7 +1754,8 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<int>("CompanyId")
                         .HasColumnType("int");
@@ -1731,31 +1765,31 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("CreatedByName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<DateTimeOffset>("CreatedOn")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<string>("Description")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<decimal>("PurchaseRate")
                         .HasPrecision(18, 6)
                         .HasColumnType("decimal(18,6)");
 
                     b.Property<bool>("PurchaseTaxIsReclaimable")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<decimal>("SalesRate")
                         .HasPrecision(18, 6)
                         .HasColumnType("decimal(18,6)");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("TaxId")
                         .HasColumnType("int");
@@ -1774,7 +1808,8 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<int>("CompanyId")
                         .HasColumnType("int");
@@ -1784,32 +1819,32 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("CreatedByName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<DateTimeOffset>("CreatedOn")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<string>("Discriminator")
                         .IsRequired()
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("DocumentName")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("DocumentType")
                         .HasColumnType("int");
 
                     b.Property<string>("EmailAddress")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("EmailMessage")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("EmailStatus")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int?>("JournalId")
                         .HasColumnType("int");
@@ -1822,7 +1857,7 @@ namespace SmartBooks.Persitence.Migrations
                         .HasColumnType("decimal(18,6)");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<decimal>("TaxTotal")
                         .HasPrecision(18, 6)
@@ -1833,7 +1868,7 @@ namespace SmartBooks.Persitence.Migrations
                         .HasColumnType("decimal(18,6)");
 
                     b.Property<DateTime>("TransactionDate")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("TransactionStatus")
                         .HasColumnType("int");
@@ -1852,7 +1887,8 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<decimal>("Amount")
                         .HasPrecision(18, 6)
@@ -1869,23 +1905,23 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("CreatedByName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<DateTimeOffset>("CreatedOn")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<string>("Description")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Discriminator")
                         .IsRequired()
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("TransactionId")
                         .HasColumnType("int");
@@ -1913,11 +1949,12 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<string>("Code")
                         .HasMaxLength(50)
-                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<int>("CompanyId")
                         .HasColumnType("int");
@@ -1927,24 +1964,24 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("CreatedByName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<DateTimeOffset>("CreatedOn")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<string>("Description")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<string>("Discriminator")
                         .IsRequired()
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("UpdateCode")
                         .HasColumnType("int");
@@ -1960,11 +1997,12 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<string>("Abbreviation")
                         .HasMaxLength(50)
-                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<int>("CompanyId")
                         .HasColumnType("int");
@@ -1974,20 +2012,20 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("CreatedByName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<DateTimeOffset>("CreatedOn")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<string>("Description")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("Type")
                         .HasColumnType("int");
@@ -2004,7 +2042,8 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<int>("CompanyId")
                         .HasColumnType("int");
@@ -2014,24 +2053,24 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("CreatedByName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<DateTimeOffset>("CreatedOn")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<string>("Description")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<decimal>("Factor")
                         .HasPrecision(18, 6)
                         .HasColumnType("decimal(18,6)");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("UnitofMeasureFromId")
                         .HasColumnType("int");
@@ -2055,19 +2094,20 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<int>("CompanyId")
                         .HasColumnType("int");
 
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ProviderDisplayName")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ProviderKey")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("UserId")
                         .HasColumnType("int");
@@ -2081,7 +2121,8 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("RoleId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<int>("CompanyId")
                         .HasColumnType("int");
@@ -2098,22 +2139,23 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<int>("CompanyId")
                         .HasColumnType("int");
 
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
                     b.Property<string>("Value")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -2124,11 +2166,12 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<string>("Code")
                         .HasMaxLength(50)
-                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<int>("CompanyId")
                         .HasColumnType("int");
@@ -2138,10 +2181,10 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("CreatedByName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<DateTimeOffset>("CreatedOn")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<int>("DefaultDespatchBin")
                         .HasColumnType("int");
@@ -2151,13 +2194,13 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("Description")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("UpdateCode")
                         .HasColumnType("int");
@@ -2171,11 +2214,12 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<string>("AccountNumber")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<int>("AccountStatus")
                         .HasColumnType("int");
@@ -2192,13 +2236,13 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("CreatedByName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<DateTimeOffset>("CreatedOn")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("MemberAccountTypeId")
                         .HasColumnType("int");
@@ -2207,10 +2251,10 @@ namespace SmartBooks.Persitence.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("OpeningDate")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime2");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("UpdateCode")
                         .HasColumnType("int");
@@ -2228,7 +2272,8 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<int>("ApplicationUserId")
                         .HasColumnType("int");
@@ -2237,7 +2282,7 @@ namespace SmartBooks.Persitence.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Comments")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("CompanyId")
                         .HasColumnType("int");
@@ -2247,22 +2292,22 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("CreatedByName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<DateTimeOffset>("CreatedOn")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("MemberId")
                         .HasColumnType("int");
 
                     b.Property<string>("MessageToMember")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("UpdateCode")
                         .HasColumnType("int");
@@ -2278,7 +2323,8 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<int>("AttachmentId")
                         .HasColumnType("int");
@@ -2294,19 +2340,19 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("CreatedByName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<DateTimeOffset>("CreatedOn")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("MemberId")
                         .HasColumnType("int");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("UpdateCode")
                         .HasColumnType("int");
@@ -2324,41 +2370,42 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<string>("CareOf")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<int>("CompanyId")
                         .HasColumnType("int");
 
                     b.Property<string>("Contacts")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<int>("CreatedBy")
                         .HasColumnType("int");
 
                     b.Property<string>("CreatedByName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<DateTimeOffset>("CreatedOn")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<bool>("IsMinor")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("MemberId")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<decimal>("Percentage")
                         .HasPrecision(18, 6)
@@ -2366,10 +2413,10 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("Relation")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("UpdateCode")
                         .HasColumnType("int");
@@ -2385,7 +2432,8 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<int>("CompanyId")
                         .HasColumnType("int");
@@ -2395,13 +2443,13 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("CreatedByName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<DateTimeOffset>("CreatedOn")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("MembershipFeeAccountTypeId")
                         .HasColumnType("int");
@@ -2413,7 +2461,7 @@ namespace SmartBooks.Persitence.Migrations
                         .HasColumnType("int");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("UpdateCode")
                         .HasColumnType("int");
@@ -2427,7 +2475,8 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<int>("CompanyId")
                         .HasColumnType("int");
@@ -2437,19 +2486,19 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("CreatedByName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<DateTimeOffset>("CreatedOn")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<string>("Description")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("UpdateCode")
                         .HasColumnType("int");
@@ -2463,7 +2512,8 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<int>("ClassRoomId")
                         .HasColumnType("int");
@@ -2479,19 +2529,19 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("CreatedByName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<DateTimeOffset>("CreatedOn")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("SchoolTermId")
                         .HasColumnType("int");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("UpdateCode")
                         .HasColumnType("int");
@@ -2511,7 +2561,8 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<int>("ClassRegisterId")
                         .HasColumnType("int");
@@ -2524,19 +2575,19 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("CreatedByName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<DateTimeOffset>("CreatedOn")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("StudentId")
                         .HasColumnType("int");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("UpdateCode")
                         .HasColumnType("int");
@@ -2554,7 +2605,8 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<int>("BlockId")
                         .HasColumnType("int");
@@ -2570,22 +2622,22 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("CreatedByName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<DateTimeOffset>("CreatedOn")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<string>("Description")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("LevelId")
                         .HasColumnType("int");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("UpdateCode")
                         .HasColumnType("int");
@@ -2603,7 +2655,8 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<int>("Capacity")
                         .HasColumnType("int");
@@ -2616,19 +2669,19 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("CreatedByName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<DateTimeOffset>("CreatedOn")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<string>("Description")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("UpdateCode")
                         .HasColumnType("int");
@@ -2642,7 +2695,8 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<int>("CompanyId")
                         .HasColumnType("int");
@@ -2652,22 +2706,22 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("CreatedByName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<DateTimeOffset>("CreatedOn")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<string>("Description")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("SchoolLevel")
                         .HasColumnType("int");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("UpdateCode")
                         .HasColumnType("int");
@@ -2681,7 +2735,8 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<int>("CompanyId")
                         .HasColumnType("int");
@@ -2691,22 +2746,22 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("CreatedByName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<DateTimeOffset>("CreatedOn")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<string>("Description")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("SchoolYearId")
                         .HasColumnType("int");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("UpdateCode")
                         .HasColumnType("int");
@@ -2722,7 +2777,8 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<int>("CompanyId")
                         .HasColumnType("int");
@@ -2732,25 +2788,25 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("CreatedByName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<DateTimeOffset>("CreatedOn")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<string>("Description")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<DateTime>("StartDate")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime2");
 
                     b.Property<DateTime>("StopDate")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime2");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("UpdateCode")
                         .HasColumnType("int");
@@ -2764,7 +2820,8 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<int>("CompanyId")
                         .HasColumnType("int");
@@ -2774,19 +2831,19 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("CreatedByName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<DateTimeOffset>("CreatedOn")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<string>("Description")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("UpdateCode")
                         .HasColumnType("int");
@@ -2800,7 +2857,8 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<int>("CompanyId")
                         .HasColumnType("int");
@@ -2810,22 +2868,22 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("CreatedByName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<DateTimeOffset>("CreatedOn")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<string>("Description")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("HoDId")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("UpdateCode")
                         .HasColumnType("int");
@@ -2839,7 +2897,8 @@ namespace SmartBooks.Persitence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<int>("CompanyId")
                         .HasColumnType("int");
@@ -2849,19 +2908,19 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("CreatedByName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<DateTimeOffset>("CreatedOn")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<string>("Description")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<bool>("SystemGenerated")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("UpdateCode")
                         .HasColumnType("int");
@@ -2874,7 +2933,7 @@ namespace SmartBooks.Persitence.Migrations
             modelBuilder.Entity("SmartBooks.Persitence.Data.Helpers.SimpleValue", b =>
                 {
                     b.Property<string>("Value")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.ToTable("SingleValue");
                 });
@@ -2934,16 +2993,16 @@ namespace SmartBooks.Persitence.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("ItaxResidentialStatus")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NhifNumber")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NssfNumber")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PayslipPassword")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasDiscriminator().HasValue("Employee");
                 });
@@ -2972,7 +3031,7 @@ namespace SmartBooks.Persitence.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("VatNumber")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasIndex("CategoryId");
 
@@ -2991,10 +3050,10 @@ namespace SmartBooks.Persitence.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("DateJoined")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime2");
 
                     b.Property<DateTime?>("DateOfBirth")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("Gender")
                         .HasColumnType("int")
@@ -3005,7 +3064,7 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("IndentificationNo")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<int>("LearntAboutUs")
                         .HasColumnType("int");
@@ -3015,18 +3074,18 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("MemberNumber")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<int>("MemberStatus")
                         .HasColumnType("int");
 
                     b.Property<string>("NearestTown")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<string>("Occupation")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<int>("OccupationType")
                         .HasColumnType("int");
@@ -3044,7 +3103,7 @@ namespace SmartBooks.Persitence.Migrations
 
                     b.Property<string>("Title")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.HasIndex("ApplicationUserId");
 
@@ -3060,22 +3119,22 @@ namespace SmartBooks.Persitence.Migrations
                     b.HasBaseType("SmartBooks.Domains.Entities.SubLedgerBase");
 
                     b.Property<DateTime>("AdmissionDate")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("GuardianContact")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("GuardianName")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("JoinedLevelId")
                         .HasColumnType("int");
 
                     b.Property<string>("PreviousSchool")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Relationship")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasIndex("JoinedLevelId");
 
@@ -3099,7 +3158,7 @@ namespace SmartBooks.Persitence.Migrations
                         .HasColumnType("decimal(18,6)");
 
                     b.Property<DateTime>("DueDate")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime2");
 
                     b.Property<decimal>("PaidAmount")
                         .HasPrecision(18, 6)
@@ -3237,7 +3296,7 @@ namespace SmartBooks.Persitence.Migrations
                     b.HasBaseType("SmartBooks.Domains.Entities.Organisation");
 
                     b.Property<string>("BankAccountNumber")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("BankBranchId")
                         .HasColumnType("int");
@@ -3246,65 +3305,13 @@ namespace SmartBooks.Persitence.Migrations
                         .HasColumnType("int");
 
                     b.Property<bool>("IsTaxAgency")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.HasIndex("BankBranchId");
 
                     b.HasIndex("BankId");
 
                     b.HasDiscriminator().HasValue("Supplier");
-                });
-
-            modelBuilder.Entity("SmartBooks.Domains.SaccoEntities.LoanProduct", b =>
-                {
-                    b.HasBaseType("SmartBooks.Domains.SaccoEntities.MemberAccountType");
-
-                    b.Property<string>("AccountNumberPrefix")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
-
-                    b.Property<bool>("AutoGenerateAccountNumbers")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<bool>("CanHaveMultiple")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<int>("InterestAccountId")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("InterestRate")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasPrecision(18, 6)
-                        .HasColumnType("decimal(18,6)");
-
-                    b.Property<int>("InterestType")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("int");
-
-                    b.Property<int>("MaxAccountLength")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("int");
-
-                    b.Property<int>("MinConsecutiveContribution")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("int");
-
-                    b.Property<int>("NextAccountNumber")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("int");
-
-                    b.Property<int>("PenaltyAccountId")
-                        .HasColumnType("int");
-
-                    b.HasIndex("InterestAccountId");
-
-                    b.HasIndex("PenaltyAccountId");
-
-                    b.HasDiscriminator().HasValue("LoanProduct");
                 });
 
             modelBuilder.Entity("SmartBooks.Domains.SaccoEntities.SaccoFee", b =>
@@ -3322,49 +3329,40 @@ namespace SmartBooks.Persitence.Migrations
                     b.HasBaseType("SmartBooks.Domains.SaccoEntities.MemberAccountType");
 
                     b.Property<string>("AccountNumberPrefix")
-                        .ValueGeneratedOnUpdateSometimes()
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<bool>("AutoGenerateAccountNumbers")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<string>("BeneficiaryName")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<string>("BeneficiaryPhoneNo")
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<bool>("CanHaveMultiple")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("InterestAccountId")
-                        .ValueGeneratedOnUpdateSometimes()
                         .HasColumnType("int");
 
                     b.Property<decimal>("InterestRate")
-                        .ValueGeneratedOnUpdateSometimes()
                         .HasPrecision(18, 6)
                         .HasColumnType("decimal(18,6)");
 
                     b.Property<int>("InterestType")
-                        .ValueGeneratedOnUpdateSometimes()
                         .HasColumnType("int");
 
                     b.Property<int>("MaxAccountLength")
-                        .ValueGeneratedOnUpdateSometimes()
                         .HasColumnType("int");
 
                     b.Property<int>("MinConsecutiveContribution")
-                        .ValueGeneratedOnUpdateSometimes()
                         .HasColumnType("int");
 
                     b.Property<int>("NextAccountNumber")
-                        .ValueGeneratedOnUpdateSometimes()
                         .HasColumnType("int");
 
                     b.HasIndex("InterestAccountId");
@@ -4086,25 +4084,6 @@ namespace SmartBooks.Persitence.Migrations
                     b.Navigation("Bank");
 
                     b.Navigation("BankBranch");
-                });
-
-            modelBuilder.Entity("SmartBooks.Domains.SaccoEntities.LoanProduct", b =>
-                {
-                    b.HasOne("SmartBooks.Domains.Entities.LedgerAccount", "InterestAccount")
-                        .WithMany()
-                        .HasForeignKey("InterestAccountId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("SmartBooks.Domains.Entities.LedgerAccount", "PenaltyAccount")
-                        .WithMany()
-                        .HasForeignKey("PenaltyAccountId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("InterestAccount");
-
-                    b.Navigation("PenaltyAccount");
                 });
 
             modelBuilder.Entity("SmartBooks.Domains.SaccoEntities.SavingsItem", b =>

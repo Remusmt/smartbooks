@@ -1,0 +1,17 @@
+D:\Repos\SmartBooks\SmartBooks.Persitence\bin\Debug\net5.0\SmartBooks.Persitence.deps.json
+D:\Repos\SmartBooks\SmartBooks.Persitence\bin\Debug\net5.0\SmartBooks.Persitence.dll
+D:\Repos\SmartBooks\SmartBooks.Persitence\bin\Debug\net5.0\SmartBooks.Persitence.pdb
+D:\Repos\SmartBooks\SmartBooks.Persitence\bin\Debug\net5.0\SmartBooks.ApplicationCore.dll
+D:\Repos\SmartBooks\SmartBooks.Persitence\bin\Debug\net5.0\SmartBooks.Domains.dll
+D:\Repos\SmartBooks\SmartBooks.Persitence\bin\Debug\net5.0\SmartBooks.ApplicationCore.pdb
+D:\Repos\SmartBooks\SmartBooks.Persitence\bin\Debug\net5.0\SmartBooks.Domains.pdb
+D:\Repos\SmartBooks\SmartBooks.Persitence\obj\Debug\net5.0\SmartBooks.Persitence.csproj.AssemblyReference.cache
+D:\Repos\SmartBooks\SmartBooks.Persitence\obj\Debug\net5.0\SmartBooks.Persitence.GeneratedMSBuildEditorConfig.editorconfig
+D:\Repos\SmartBooks\SmartBooks.Persitence\obj\Debug\net5.0\SmartBooks.Persitence.AssemblyInfoInputs.cache
+D:\Repos\SmartBooks\SmartBooks.Persitence\obj\Debug\net5.0\SmartBooks.Persitence.AssemblyInfo.cs
+D:\Repos\SmartBooks\SmartBooks.Persitence\obj\Debug\net5.0\SmartBooks.Persitence.csproj.CoreCompileInputs.cache
+D:\Repos\SmartBooks\SmartBooks.Persitence\obj\Debug\net5.0\SmartBooks.Persitence.csproj.CopyComplete
+D:\Repos\SmartBooks\SmartBooks.Persitence\obj\Debug\net5.0\SmartBooks.Persitence.dll
+D:\Repos\SmartBooks\SmartBooks.Persitence\obj\Debug\net5.0\refint\SmartBooks.Persitence.dll
+D:\Repos\SmartBooks\SmartBooks.Persitence\obj\Debug\net5.0\SmartBooks.Persitence.pdb
+D:\Repos\SmartBooks\SmartBooks.Persitence\obj\Debug\net5.0\ref\SmartBooks.Persitence.dll

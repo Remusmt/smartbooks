@@ -126,5 +126,8 @@
       }
     }
   },
-  "defaultProject": "SmartBooksFrontend"
+  "defaultProject": "SmartBooksFrontend",
+  "cli": {
+    "analytics": "97820e16-063c-41c6-917d-5b0111547dbf"
+  }
 }

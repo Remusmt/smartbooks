@@ -10,3 +10,16 @@ E:\repos\Witsoft\SmartBooks\SmartBooks.ApplicationCore\obj\Debug\netstandard2.1\
 E:\repos\Witsoft\SmartBooks\SmartBooks.ApplicationCore\obj\Debug\netstandard2.1\SmartBooks.ApplicationCore.csproj.CopyComplete
 E:\repos\Witsoft\SmartBooks\SmartBooks.ApplicationCore\obj\Debug\netstandard2.1\SmartBooks.ApplicationCore.dll
 E:\repos\Witsoft\SmartBooks\SmartBooks.ApplicationCore\obj\Debug\netstandard2.1\SmartBooks.ApplicationCore.pdb
+D:\Repos\SmartBooks\SmartBooks.ApplicationCore\bin\Debug\netstandard2.1\SmartBooks.ApplicationCore.deps.json
+D:\Repos\SmartBooks\SmartBooks.ApplicationCore\bin\Debug\netstandard2.1\SmartBooks.ApplicationCore.dll
+D:\Repos\SmartBooks\SmartBooks.ApplicationCore\bin\Debug\netstandard2.1\SmartBooks.ApplicationCore.pdb
+D:\Repos\SmartBooks\SmartBooks.ApplicationCore\bin\Debug\netstandard2.1\SmartBooks.Domains.dll
+D:\Repos\SmartBooks\SmartBooks.ApplicationCore\bin\Debug\netstandard2.1\SmartBooks.Domains.pdb
+D:\Repos\SmartBooks\SmartBooks.ApplicationCore\obj\Debug\netstandard2.1\SmartBooks.ApplicationCore.csproj.AssemblyReference.cache
+D:\Repos\SmartBooks\SmartBooks.ApplicationCore\obj\Debug\netstandard2.1\SmartBooks.ApplicationCore.GeneratedMSBuildEditorConfig.editorconfig
+D:\Repos\SmartBooks\SmartBooks.ApplicationCore\obj\Debug\netstandard2.1\SmartBooks.ApplicationCore.AssemblyInfoInputs.cache
+D:\Repos\SmartBooks\SmartBooks.ApplicationCore\obj\Debug\netstandard2.1\SmartBooks.ApplicationCore.AssemblyInfo.cs
+D:\Repos\SmartBooks\SmartBooks.ApplicationCore\obj\Debug\netstandard2.1\SmartBooks.ApplicationCore.csproj.CoreCompileInputs.cache
+D:\Repos\SmartBooks\SmartBooks.ApplicationCore\obj\Debug\netstandard2.1\SmartBooks.ApplicationCore.csproj.CopyComplete
+D:\Repos\SmartBooks\SmartBooks.ApplicationCore\obj\Debug\netstandard2.1\SmartBooks.ApplicationCore.dll
+D:\Repos\SmartBooks\SmartBooks.ApplicationCore\obj\Debug\netstandard2.1\SmartBooks.ApplicationCore.pdb

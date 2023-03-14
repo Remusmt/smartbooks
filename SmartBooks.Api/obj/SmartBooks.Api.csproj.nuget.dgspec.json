@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "H:\\repos\\Witsoft\\SmartBooks\\SmartBooks.Api\\SmartBooks.Api.csproj": {}
+    "D:\\Repos\\SmartBooks\\SmartBooks.Api\\SmartBooks.Api.csproj": {}
   },
   "projects": {
-    "H:\\repos\\Witsoft\\SmartBooks\\SmartBooks.Api\\SmartBooks.Api.csproj": {
+    "D:\\Repos\\SmartBooks\\SmartBooks.Api\\SmartBooks.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\repos\\Witsoft\\SmartBooks\\SmartBooks.Api\\SmartBooks.Api.csproj",
+        "projectUniqueName": "D:\\Repos\\SmartBooks\\SmartBooks.Api\\SmartBooks.Api.csproj",
         "projectName": "SmartBooks.Api",
-        "projectPath": "H:\\repos\\Witsoft\\SmartBooks\\SmartBooks.Api\\SmartBooks.Api.csproj",
+        "projectPath": "D:\\Repos\\SmartBooks\\SmartBooks.Api\\SmartBooks.Api.csproj",
         "packagesPath": "C:\\Users\\remus\\.nuget\\packages\\",
-        "outputPath": "H:\\repos\\Witsoft\\SmartBooks\\SmartBooks.Api\\obj\\",
+        "outputPath": "D:\\Repos\\SmartBooks\\SmartBooks.Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages",
@@ -36,11 +36,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "H:\\repos\\Witsoft\\SmartBooks\\SmartBooks.ApplicationCore\\SmartBooks.ApplicationCore.csproj": {
-                "projectPath": "H:\\repos\\Witsoft\\SmartBooks\\SmartBooks.ApplicationCore\\SmartBooks.ApplicationCore.csproj"
+              "D:\\Repos\\SmartBooks\\SmartBooks.ApplicationCore\\SmartBooks.ApplicationCore.csproj": {
+                "projectPath": "D:\\Repos\\SmartBooks\\SmartBooks.ApplicationCore\\SmartBooks.ApplicationCore.csproj"
               },
-              "H:\\repos\\Witsoft\\SmartBooks\\SmartBooks.Persitence\\SmartBooks.Persitence.csproj": {
-                "projectPath": "H:\\repos\\Witsoft\\SmartBooks\\SmartBooks.Persitence\\SmartBooks.Persitence.csproj"
+              "D:\\Repos\\SmartBooks\\SmartBooks.Persitence\\SmartBooks.Persitence.csproj": {
+                "projectPath": "D:\\Repos\\SmartBooks\\SmartBooks.Persitence\\SmartBooks.Persitence.csproj"
               }
             }
           }
@@ -55,6 +55,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "AspNetCore.HealthChecks.NpgSql": {
+              "target": "Package",
+              "version": "[6.0.2, )"
+            },
+            "AspNetCore.HealthChecks.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.2, )"
+            },
             "ClosedXML": {
               "target": "Package",
               "version": "[0.95.4, )"
@@ -85,6 +93,10 @@
               "target": "Package",
               "version": "[5.0.2, )"
             },
+            "Microsoft.Extensions.Diagnostics.HealthChecks": {
+              "target": "Package",
+              "version": "[7.0.3, )"
+            },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
               "version": "[5.0.0, )"
@@ -108,7 +120,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -120,18 +133,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "H:\\repos\\Witsoft\\SmartBooks\\SmartBooks.ApplicationCore\\SmartBooks.ApplicationCore.csproj": {
+    "D:\\Repos\\SmartBooks\\SmartBooks.ApplicationCore\\SmartBooks.ApplicationCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\repos\\Witsoft\\SmartBooks\\SmartBooks.ApplicationCore\\SmartBooks.ApplicationCore.csproj",
+        "projectUniqueName": "D:\\Repos\\SmartBooks\\SmartBooks.ApplicationCore\\SmartBooks.ApplicationCore.csproj",
         "projectName": "SmartBooks.ApplicationCore",
-        "projectPath": "H:\\repos\\Witsoft\\SmartBooks\\SmartBooks.ApplicationCore\\SmartBooks.ApplicationCore.csproj",
+        "projectPath": "D:\\Repos\\SmartBooks\\SmartBooks.ApplicationCore\\SmartBooks.ApplicationCore.csproj",
         "packagesPath": "C:\\Users\\remus\\.nuget\\packages\\",
-        "outputPath": "H:\\repos\\Witsoft\\SmartBooks\\SmartBooks.ApplicationCore\\obj\\",
+        "outputPath": "D:\\Repos\\SmartBooks\\SmartBooks.ApplicationCore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages",
@@ -144,7 +157,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netstandard2.1"
+          "net5.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\System\\Components\\Packages": {},
@@ -153,11 +166,11 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netstandard2.1": {
-            "targetAlias": "netstandard2.1",
+          "net5.0": {
+            "targetAlias": "net5.0",
             "projectReferences": {
-              "H:\\repos\\Witsoft\\SmartBooks\\SmartBooks.Domains\\SmartBooks.Domains.csproj": {
-                "projectPath": "H:\\repos\\Witsoft\\SmartBooks\\SmartBooks.Domains\\SmartBooks.Domains.csproj"
+              "D:\\Repos\\SmartBooks\\SmartBooks.Domains\\SmartBooks.Domains.csproj": {
+                "projectPath": "D:\\Repos\\SmartBooks\\SmartBooks.Domains\\SmartBooks.Domains.csproj"
               }
             }
           }
@@ -169,8 +182,8 @@
         }
       },
       "frameworks": {
-        "netstandard2.1": {
-          "targetAlias": "netstandard2.1",
+        "net5.0": {
+          "targetAlias": "net5.0",
           "dependencies": {
             "Newtonsoft.Json": {
               "target": "Package",
@@ -187,27 +200,28 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "NETStandard.Library": {
+            "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "H:\\repos\\Witsoft\\SmartBooks\\SmartBooks.Domains\\SmartBooks.Domains.csproj": {
+    "D:\\Repos\\SmartBooks\\SmartBooks.Domains\\SmartBooks.Domains.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\repos\\Witsoft\\SmartBooks\\SmartBooks.Domains\\SmartBooks.Domains.csproj",
+        "projectUniqueName": "D:\\Repos\\SmartBooks\\SmartBooks.Domains\\SmartBooks.Domains.csproj",
         "projectName": "SmartBooks.Domains",
-        "projectPath": "H:\\repos\\Witsoft\\SmartBooks\\SmartBooks.Domains\\SmartBooks.Domains.csproj",
+        "projectPath": "D:\\Repos\\SmartBooks\\SmartBooks.Domains\\SmartBooks.Domains.csproj",
         "packagesPath": "C:\\Users\\remus\\.nuget\\packages\\",
-        "outputPath": "H:\\repos\\Witsoft\\SmartBooks\\SmartBooks.Domains\\obj\\",
+        "outputPath": "D:\\Repos\\SmartBooks\\SmartBooks.Domains\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages",
@@ -220,7 +234,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netstandard2.1"
+          "net5.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\System\\Components\\Packages": {},
@@ -229,8 +243,8 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netstandard2.1": {
-            "targetAlias": "netstandard2.1",
+          "net5.0": {
+            "targetAlias": "net5.0",
             "projectReferences": {}
           }
         },
@@ -241,8 +255,8 @@
         }
       },
       "frameworks": {
-        "netstandard2.1": {
-          "targetAlias": "netstandard2.1",
+        "net5.0": {
+          "targetAlias": "net5.0",
           "dependencies": {
             "Microsoft.Extensions.Identity.Stores": {
               "target": "Package",
@@ -255,27 +269,28 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "NETStandard.Library": {
+            "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "H:\\repos\\Witsoft\\SmartBooks\\SmartBooks.Persitence\\SmartBooks.Persitence.csproj": {
+    "D:\\Repos\\SmartBooks\\SmartBooks.Persitence\\SmartBooks.Persitence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\repos\\Witsoft\\SmartBooks\\SmartBooks.Persitence\\SmartBooks.Persitence.csproj",
+        "projectUniqueName": "D:\\Repos\\SmartBooks\\SmartBooks.Persitence\\SmartBooks.Persitence.csproj",
         "projectName": "SmartBooks.Persitence",
-        "projectPath": "H:\\repos\\Witsoft\\SmartBooks\\SmartBooks.Persitence\\SmartBooks.Persitence.csproj",
+        "projectPath": "D:\\Repos\\SmartBooks\\SmartBooks.Persitence\\SmartBooks.Persitence.csproj",
         "packagesPath": "C:\\Users\\remus\\.nuget\\packages\\",
-        "outputPath": "H:\\repos\\Witsoft\\SmartBooks\\SmartBooks.Persitence\\obj\\",
+        "outputPath": "D:\\Repos\\SmartBooks\\SmartBooks.Persitence\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages",
@@ -288,7 +303,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netstandard2.1"
+          "net5.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\System\\Components\\Packages": {},
@@ -297,14 +312,14 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netstandard2.1": {
-            "targetAlias": "netstandard2.1",
+          "net5.0": {
+            "targetAlias": "net5.0",
             "projectReferences": {
-              "H:\\repos\\Witsoft\\SmartBooks\\SmartBooks.ApplicationCore\\SmartBooks.ApplicationCore.csproj": {
-                "projectPath": "H:\\repos\\Witsoft\\SmartBooks\\SmartBooks.ApplicationCore\\SmartBooks.ApplicationCore.csproj"
+              "D:\\Repos\\SmartBooks\\SmartBooks.ApplicationCore\\SmartBooks.ApplicationCore.csproj": {
+                "projectPath": "D:\\Repos\\SmartBooks\\SmartBooks.ApplicationCore\\SmartBooks.ApplicationCore.csproj"
               },
-              "H:\\repos\\Witsoft\\SmartBooks\\SmartBooks.Domains\\SmartBooks.Domains.csproj": {
-                "projectPath": "H:\\repos\\Witsoft\\SmartBooks\\SmartBooks.Domains\\SmartBooks.Domains.csproj"
+              "D:\\Repos\\SmartBooks\\SmartBooks.Domains\\SmartBooks.Domains.csproj": {
+                "projectPath": "D:\\Repos\\SmartBooks\\SmartBooks.Domains\\SmartBooks.Domains.csproj"
               }
             }
           }
@@ -316,8 +331,8 @@
         }
       },
       "frameworks": {
-        "netstandard2.1": {
-          "targetAlias": "netstandard2.1",
+        "net5.0": {
+          "targetAlias": "net5.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -338,16 +353,17 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "NETStandard.Library": {
+            "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

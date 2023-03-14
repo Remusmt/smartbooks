@@ -1,0 +1,15 @@
+D:\Repos\SmartBooks\SmartBooks.ApplicationCore\bin\Debug\net5.0\SmartBooks.ApplicationCore.deps.json
+D:\Repos\SmartBooks\SmartBooks.ApplicationCore\bin\Debug\net5.0\SmartBooks.ApplicationCore.dll
+D:\Repos\SmartBooks\SmartBooks.ApplicationCore\bin\Debug\net5.0\SmartBooks.ApplicationCore.pdb
+D:\Repos\SmartBooks\SmartBooks.ApplicationCore\bin\Debug\net5.0\SmartBooks.Domains.dll
+D:\Repos\SmartBooks\SmartBooks.ApplicationCore\bin\Debug\net5.0\SmartBooks.Domains.pdb
+D:\Repos\SmartBooks\SmartBooks.ApplicationCore\obj\Debug\net5.0\SmartBooks.ApplicationCore.csproj.AssemblyReference.cache
+D:\Repos\SmartBooks\SmartBooks.ApplicationCore\obj\Debug\net5.0\SmartBooks.ApplicationCore.GeneratedMSBuildEditorConfig.editorconfig
+D:\Repos\SmartBooks\SmartBooks.ApplicationCore\obj\Debug\net5.0\SmartBooks.ApplicationCore.AssemblyInfoInputs.cache
+D:\Repos\SmartBooks\SmartBooks.ApplicationCore\obj\Debug\net5.0\SmartBooks.ApplicationCore.AssemblyInfo.cs
+D:\Repos\SmartBooks\SmartBooks.ApplicationCore\obj\Debug\net5.0\SmartBooks.ApplicationCore.csproj.CoreCompileInputs.cache
+D:\Repos\SmartBooks\SmartBooks.ApplicationCore\obj\Debug\net5.0\SmartBooks.ApplicationCore.csproj.CopyComplete
+D:\Repos\SmartBooks\SmartBooks.ApplicationCore\obj\Debug\net5.0\SmartBooks.ApplicationCore.dll
+D:\Repos\SmartBooks\SmartBooks.ApplicationCore\obj\Debug\net5.0\refint\SmartBooks.ApplicationCore.dll
+D:\Repos\SmartBooks\SmartBooks.ApplicationCore\obj\Debug\net5.0\SmartBooks.ApplicationCore.pdb
+D:\Repos\SmartBooks\SmartBooks.ApplicationCore\obj\Debug\net5.0\ref\SmartBooks.ApplicationCore.dll

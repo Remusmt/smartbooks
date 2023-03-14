@@ -1,0 +1,12 @@
+D:\Repos\SmartBooks\SmartBooks.Domains\bin\Debug\net5.0\SmartBooks.Domains.deps.json
+D:\Repos\SmartBooks\SmartBooks.Domains\bin\Debug\net5.0\SmartBooks.Domains.dll
+D:\Repos\SmartBooks\SmartBooks.Domains\bin\Debug\net5.0\SmartBooks.Domains.pdb
+D:\Repos\SmartBooks\SmartBooks.Domains\obj\Debug\net5.0\SmartBooks.Domains.csproj.AssemblyReference.cache
+D:\Repos\SmartBooks\SmartBooks.Domains\obj\Debug\net5.0\SmartBooks.Domains.GeneratedMSBuildEditorConfig.editorconfig
+D:\Repos\SmartBooks\SmartBooks.Domains\obj\Debug\net5.0\SmartBooks.Domains.AssemblyInfoInputs.cache
+D:\Repos\SmartBooks\SmartBooks.Domains\obj\Debug\net5.0\SmartBooks.Domains.AssemblyInfo.cs
+D:\Repos\SmartBooks\SmartBooks.Domains\obj\Debug\net5.0\SmartBooks.Domains.csproj.CoreCompileInputs.cache
+D:\Repos\SmartBooks\SmartBooks.Domains\obj\Debug\net5.0\SmartBooks.Domains.dll
+D:\Repos\SmartBooks\SmartBooks.Domains\obj\Debug\net5.0\refint\SmartBooks.Domains.dll
+D:\Repos\SmartBooks\SmartBooks.Domains\obj\Debug\net5.0\SmartBooks.Domains.pdb
+D:\Repos\SmartBooks\SmartBooks.Domains\obj\Debug\net5.0\ref\SmartBooks.Domains.dll

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/sTk2Jmi0k5zRpmZqKwzB6CwHmCq7m80OSExULRpgCP4x9TfDmSi8ygEDCBXz3O9U8FCtAFsdGUHDRQ5dNAwew==",
+  "dgSpecHash": "qDPWa7//5yDEt48Qx0CoMQkXhdAwTRxDonQJ+tsy7YhoX6BnQQiL5vY+T5CKNbjjHFEsL/yKtYQCzhqMZIvAwQ==",
   "success": true,
-  "projectFilePath": "H:\\repos\\Witsoft\\SmartBooks\\SmartBooks.UnitTests\\SmartBooks.UnitTests.csproj",
+  "projectFilePath": "D:\\Repos\\SmartBooks\\SmartBooks.UnitTests\\SmartBooks.UnitTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\remus\\.nuget\\packages\\coverlet.collector\\3.0.2\\coverlet.collector.3.0.2.nupkg.sha512",
     "C:\\Users\\remus\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.2\\microsoft.aspnetcore.cryptography.internal.5.0.2.nupkg.sha512",
@@ -152,8 +152,6 @@
     "C:\\Users\\remus\\.nuget\\packages\\system.text.encoding\\4.3.0\\system.text.encoding.4.3.0.nupkg.sha512",
     "C:\\Users\\remus\\.nuget\\packages\\system.text.encoding.codepages\\4.7.0\\system.text.encoding.codepages.4.7.0.nupkg.sha512",
     "C:\\Users\\remus\\.nuget\\packages\\system.text.encoding.extensions\\4.3.0\\system.text.encoding.extensions.4.3.0.nupkg.sha512",
-    "C:\\Users\\remus\\.nuget\\packages\\system.text.encodings.web\\5.0.0\\system.text.encodings.web.5.0.0.nupkg.sha512",
-    "C:\\Users\\remus\\.nuget\\packages\\system.text.json\\5.0.0\\system.text.json.5.0.0.nupkg.sha512",
     "C:\\Users\\remus\\.nuget\\packages\\system.text.regularexpressions\\4.3.0\\system.text.regularexpressions.4.3.0.nupkg.sha512",
     "C:\\Users\\remus\\.nuget\\packages\\system.threading\\4.3.0\\system.threading.4.3.0.nupkg.sha512",
     "C:\\Users\\remus\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
